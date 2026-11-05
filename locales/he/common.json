@@ -502,6 +502,9 @@
       "unverified_sent_from": "ההודעה הזו טוענת שהיא מהדומיין {domain}, אבל היא נשלחה מהדומיין {host} ואין בה חתימה תקפה של {domain}.",
       "failed": "ההודעה הזו טוענת שהיא מהדומיין {domain}, אבל היא נכשלה בבדיקות השולח של הדומיין הזה. ייתכן שהיא מזויפת.",
       "failed_sent_from": "ההודעה הזו טוענת שהיא מהדומיין {domain}, אבל היא נשלחה מהדומיין {host} ונכשלה בבדיקות השולח של {domain}. ייתכן שהיא מזויפת.",
+      "forwarded_label": "Via mail filter",
+      "forwarded": "This message came through your organisation's mail filter, so the sending server couldn't be checked, and it has no signature from {domain}.",
+      "forwarded_sent_from": "This message came through your organisation's mail filter. It was sent from {host} and has no signature from {domain}.",
       "caution": "היזהר מקישורים, מקבצים מצורפים ומבקשות לסיסמאות או לפרטי תשלום."
     },
     "brand_logo": {

@@ -12,6 +12,7 @@
 
 import type { EmailTemplate } from '@/lib/template-types';
 import { toAsciiDomain } from '@/lib/idn';
+import { INBOUND_GATEWAY_MODES, type InboundGatewayMode } from '@/lib/email-headers';
 
 /** Details a user fills in once for the organisation signature. */
 export const SIGNATURE_FIELDS = ['title', 'department', 'phone', 'mobile'] as const;
@@ -120,6 +121,17 @@ export interface OrganisationPolicy {
     /** How far back "Recover deleted items" lists; 0 is everything the server keeps. */
     days: number;
   };
+  inboundGateway: {
+    /**
+     * Domains of the filtering service the organisation's MX points at (e.g.
+     * ik2.com for MXGuardDog). Mail that passed SPF for one of them came
+     * through the gateway, so the sender check doesn't take its SPF pass or
+     * DMARC verdict for the sender's. [] is off.
+     */
+    domains: string[];
+    /** `soften`: a neutral note in place of the warning. `hide`: no note. */
+    mode: InboundGatewayMode;
+  };
   phishingReport: {
     /** Where "Report phishing" sends; '' turns the action off. */
     address: string;
@@ -197,6 +209,7 @@ export const DEFAULT_ORGANISATION_POLICY: OrganisationPolicy = {
   templates: { library: [] },
   session: { idleMinutes: 0, maxHours: 0, warnSeconds: 60 },
   recovery: { days: 0 },
+  inboundGateway: { domains: [], mode: 'soften' },
   phishingReport: { address: '', format: 'forward' },
   labels: { list: [], defaultId: '', required: false, extraHeader: '' },
   announcement: { id: '', severity: 'info', text: {}, fallbackLocale: 'en', startsAt: '', endsAt: '', dismissible: true },
@@ -506,6 +519,12 @@ export function sanitizeOrganisationPartial(raw: unknown): DeepPartial<Organisat
 
   const rec = section('recovery');
   if (rec) assign('recovery', { days: count(rec.days, 3650) });
+
+  const gw = section('inboundGateway');
+  if (gw) assign('inboundGateway', {
+    domains: normalizeDomainList(gw.domains),
+    mode: oneOf(gw.mode, INBOUND_GATEWAY_MODES),
+  });
 
   const phish = section('phishingReport');
   if (phish) assign('phishingReport', {

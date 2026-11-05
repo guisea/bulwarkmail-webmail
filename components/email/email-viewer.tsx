@@ -206,6 +206,7 @@ import { useArchiveActionEnabled } from "@/lib/archive-gate";
 import { archiveInboxTarget } from "@/lib/archive-inbox";
 import { useRemoteContentBlockedByOrg, useRemoteContentHeldBack } from "@/hooks/use-third-party-mode";
 import { useSenderWarning } from "@/hooks/use-sender-warning";
+import { useInboundGateway } from "@/hooks/use-inbound-gateway";
 import { BrandVerifiedBadge } from "@/components/email/brand-verified-badge";
 
 /** The More menu's two drill-downs: a folder list and a tag list. */
@@ -1557,6 +1558,7 @@ export function EmailViewer({
   const mailAttachmentActionRef = useRef(mailAttachmentAction);
   mailAttachmentActionRef.current = mailAttachmentAction;
   const addTrustedSender = useSettingsStore((state) => state.addTrustedSender);
+  const inboundGateway = useInboundGateway();
   const isSenderTrusted = useSettingsStore((state) => state.isSenderTrusted);
   const trustedSendersAddressBook = useSettingsStore((state) => state.trustedSendersAddressBook);
   const isTrustedAddressBookSender = useContactStore((state) => state.isTrustedAddressBookSender);
@@ -4505,12 +4507,17 @@ ${printWatermark ? printWatermark.html : ''}
   }
 
   const sender = email.from?.[0];
-  const senderVerification = getSenderVerification(email.authenticationResults, sender?.email);
+  const senderVerification = getSenderVerification(email.authenticationResults, sender?.email, inboundGateway);
+  const senderForwarded = senderVerification?.status === 'forwarded';
   const senderVerificationLabel = senderVerification?.status === 'failed'
     ? t('sender_check.failed_label')
-    : t('sender_check.unverified_label');
+    : senderForwarded ? t('sender_check.forwarded_label') : t('sender_check.unverified_label');
   const senderVerificationMessage = !senderVerification
     ? ''
+    : senderForwarded
+      ? senderVerification.sentFrom
+        ? t('sender_check.forwarded_sent_from', { domain: senderVerification.domain, host: senderVerification.sentFrom })
+        : t('sender_check.forwarded', { domain: senderVerification.domain })
     : senderVerification.status === 'failed'
       ? senderVerification.sentFrom
         ? t('sender_check.failed_sent_from', { domain: senderVerification.domain, host: senderVerification.sentFrom })
@@ -5883,7 +5890,9 @@ ${printWatermark ? printWatermark.html : ''}
                               "inline-flex items-center gap-1 px-1.5 py-0.5 rounded-md border text-xs whitespace-nowrap cursor-help",
                               senderVerification.status === 'failed'
                                 ? "bg-red-500/[0.07] border-red-500/30 text-red-700 dark:text-red-400"
-                                : "bg-amber-500/[0.07] border-amber-500/30 text-amber-700 dark:text-amber-400",
+                                : senderForwarded
+                                  ? "bg-muted border-border text-muted-foreground"
+                                  : "bg-amber-500/[0.07] border-amber-500/30 text-amber-700 dark:text-amber-400",
                             )}
                             title={senderVerificationMessage}
                           >
@@ -6131,7 +6140,9 @@ ${printWatermark ? printWatermark.html : ''}
               <div className="flex items-start gap-3 py-1" data-testid="sender-check-warning">
                 <div className={cn(
                   "w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 shadow-sm",
-                  senderVerification.status === 'failed' ? "bg-destructive/15 text-destructive" : "bg-warning/15 text-warning",
+                  senderVerification.status === 'failed'
+                    ? "bg-destructive/15 text-destructive"
+                    : senderForwarded ? "bg-muted text-muted-foreground" : "bg-warning/15 text-warning",
                 )}>
                   <ShieldAlert className="w-5 h-5" />
                 </div>
@@ -6142,9 +6153,11 @@ ${printWatermark ? printWatermark.html : ''}
                   <div className="text-sm font-medium text-foreground break-words">
                     {senderVerificationMessage}
                   </div>
-                  <div className="text-sm text-muted-foreground break-words">
-                    {t('sender_check.caution')}
-                  </div>
+                  {!senderForwarded && (
+                    <div className="text-sm text-muted-foreground break-words">
+                      {t('sender_check.caution')}
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
