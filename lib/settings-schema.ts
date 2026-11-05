@@ -431,7 +431,7 @@ export const DENIED_SETTINGS: readonly string[] = [
   'folderIcons', 'folderCountModes', 'preferredIdentityIds',
   // App bookkeeping and UI state, not preferences.
   'onboardingCompleted', 'tourCompleted', 'mvUnreadSectionCollapsed', 'mvEverythingElseCollapsed',
-  'vacationCalendarBlocks', 'explicitSettings', 'proofreadingNoticeSeen',
+  'vacationCalendarBlocks', 'explicitSettings', 'proofreadingNoticeSeen', 'spamReportNoConfirm',
   // Security, debugging and sync.
   'sessionTimeout', 'debugMode', 'debugCategories', 'settingsSyncDisabled',
   // Tags (they have their own keywords.* actions), filters and add-ons.

@@ -138,6 +138,15 @@ export interface OrganisationPolicy {
     /** Forward the message as an attachment, or an ARF report (RFC 5965). */
     format: PhishingReportFormat;
   };
+  spamReport: {
+    /**
+     * Where "Mark as spam" sends the message, e.g. the inbound gateway's spam
+     * address; the message is then deleted instead of moved to Junk. ''
+     * leaves "Mark as spam" as it is.
+     */
+    address: string;
+    format: PhishingReportFormat;
+  };
   /** A scope that sets this section replaces it as a whole. */
   labels: {
     /** [] turns classification labels off. */
@@ -211,6 +220,7 @@ export const DEFAULT_ORGANISATION_POLICY: OrganisationPolicy = {
   recovery: { days: 0 },
   inboundGateway: { domains: [], mode: 'soften' },
   phishingReport: { address: '', format: 'forward' },
+  spamReport: { address: '', format: 'forward' },
   labels: { list: [], defaultId: '', required: false, extraHeader: '' },
   announcement: { id: '', severity: 'info', text: {}, fallbackLocale: 'en', startsAt: '', endsAt: '', dismissible: true },
   vacationTemplates: { library: [] },
@@ -530,6 +540,12 @@ export function sanitizeOrganisationPartial(raw: unknown): DeepPartial<Organisat
   if (phish) assign('phishingReport', {
     address: email(phish.address),
     format: oneOf(phish.format, PHISHING_REPORT_FORMATS),
+  });
+
+  const spam = section('spamReport');
+  if (spam) assign('spamReport', {
+    address: email(spam.address),
+    format: oneOf(spam.format, PHISHING_REPORT_FORMATS),
   });
 
   const lab = section('labels');

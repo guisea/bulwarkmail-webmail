@@ -44,6 +44,7 @@ import { PluginActions } from "@/components/plugins/plugin-actions";
 import { useUnreadFirstSection } from "@/hooks/use-unread-first-section";
 import { useTimeoutWhileMounted } from "@/hooks/use-timeout-while-mounted";
 import { commonTagScope } from "@/hooks/use-account-tags";
+import { requestSpamReport } from "@/lib/spam-report-flow";
 
 interface MvListToolbarProps {
   /** Loaded conversation count, for the right-hand range readout. */
@@ -344,6 +345,7 @@ export function MvListToolbar({
         if (isInJunk) {
           if (await batchUndoSpam(client, ids)) toastWithUndo(tSpam("toast_not_spam_batch", { count: ids.length }), undoMoveAction(client, restore, undo));
         } else {
+          if (requestSpamReport(resolveSelectedEmails(useEmailStore.getState()))) return;
           if (await batchMarkAsSpam(client, ids)) toastWithUndo(tSpam("toast_batch", { count: ids.length }), undoMoveAction(client, restore, undo));
         }
       } catch {
