@@ -506,3 +506,56 @@ describe('getSenderVerification', () => {
     expect(getSenderVerification(phish, undefined)).toBeNull();
   });
 });
+
+describe('getSenderVerification behind an inbound gateway', () => {
+  // Headers Stalwart wrote for mail MXGuardDog (ik2.com) relayed with SRS.
+  const viaGateway = (rest: string) => parseAuthenticationResults(
+    `mail1.guise.net.nz;\r\n\t${rest}spf=none smtp.helo=s480g.ik2.com;\r\n\tspf=pass smtp.mailfrom="SRS0=UUxN=IU=bigsound.nz=info@ik2.com";\r\n\tiprev=pass policy.iprev=64.38.239.86;\r\n\tdmarc=fail (policy not aligned) header.from=bigsound.nz policy.dmarc=none`,
+  );
+  const soften = { domains: ['ik2.com'], mode: 'soften' } as const;
+  const hide = { domains: ['ik2.com'], mode: 'hide' } as const;
+  const from = 'info@bigsound.nz';
+
+  it('softens an unsigned message the gateway relayed, even with dmarc=fail', () => {
+    const auth = viaGateway('');
+    expect(getSenderVerification(auth, from)).toMatchObject({ status: 'failed' });
+    expect(getSenderVerification(auth, from, soften)).toEqual({ status: 'forwarded', domain: 'bigsound.nz' });
+    expect(getSenderVerification(auth, from, hide)).toBeNull();
+  });
+
+  it('names the third-party signer of a relayed message', () => {
+    const auth = viaGateway('dkim=pass header.d=sendgrid.net;\r\n\t');
+    expect(getSenderVerification(auth, from, soften)).toEqual({ status: 'forwarded', domain: 'bigsound.nz', sentFrom: 'sendgrid.net' });
+  });
+
+  it('clears a relayed message signed by the From domain', () => {
+    expect(getSenderVerification(viaGateway('dkim=pass header.d=bigsound.nz;\r\n\t'), from, soften)).toBeNull();
+  });
+
+  it('still fails a relayed message whose From domain signature is broken', () => {
+    const auth = viaGateway('dkim=fail header.d=bigsound.nz;\r\n\t');
+    expect(getSenderVerification(auth, from, soften)).toEqual({ status: 'failed', domain: 'bigsound.nz' });
+    expect(getSenderVerification(auth, from, hide)).toEqual({ status: 'failed', domain: 'bigsound.nz' });
+  });
+
+  it('only counts an SPF pass for the gateway or its subdomains', () => {
+    const other = parseAuthenticationResults('mx; spf=pass smtp.mailfrom=bounce@evil.example; dmarc=none header.from=bigsound.nz');
+    expect(getSenderVerification(other, from, hide)).toMatchObject({ status: 'unverified' });
+    const parent = parseAuthenticationResults('mx; spf=pass smtp.mailfrom=a@ik2.com.evil.example; dmarc=none header.from=bigsound.nz');
+    expect(getSenderVerification(parent, from, hide)).toMatchObject({ status: 'unverified' });
+    const sub = parseAuthenticationResults('mx; spf=pass smtp.mailfrom=a@out.ik2.com; dmarc=none header.from=bigsound.nz');
+    expect(getSenderVerification(sub, from, hide)).toBeNull();
+  });
+
+  it('needs the gateway to pass SPF, not just appear in the envelope', () => {
+    const typed = parseAuthenticationResults('mx; spf=fail smtp.mailfrom=a@ik2.com; dmarc=fail header.from=bigsound.nz');
+    expect(getSenderVerification(typed, from, hide)).toMatchObject({ status: 'failed' });
+    const none = parseAuthenticationResults('mx; spf=none smtp.mailfrom=a@ik2.com; dmarc=none header.from=bigsound.nz');
+    expect(getSenderVerification(none, from, hide)).toMatchObject({ status: 'unverified' });
+  });
+
+  it('changes nothing without gateway domains', () => {
+    const auth = viaGateway('');
+    expect(getSenderVerification(auth, from, { domains: [], mode: 'hide' })).toEqual(getSenderVerification(auth, from));
+  });
+});

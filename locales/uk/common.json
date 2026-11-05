@@ -577,6 +577,9 @@
       "unverified_sent_from": "Це повідомлення нібито надіслано з домену {domain}, але насправді його надіслано з домену {host}, і воно не має дійсного підпису домену {domain}.",
       "failed": "Це повідомлення нібито надіслано з домену {domain}, але воно не пройшло перевірку відправника цього домену. Можливо, воно підроблене.",
       "failed_sent_from": "Це повідомлення нібито надіслано з домену {domain}, але насправді його надіслано з домену {host}, і воно не пройшло перевірку відправника домену {domain}. Можливо, воно підроблене.",
+      "forwarded_label": "Via mail filter",
+      "forwarded": "This message came through your organisation's mail filter, so the sending server couldn't be checked, and it has no signature from {domain}.",
+      "forwarded_sent_from": "This message came through your organisation's mail filter. It was sent from {host} and has no signature from {domain}.",
       "caution": "Будьте обережні з посиланнями, вкладеннями та запитами паролів чи платіжних даних."
     },
     "brand_logo": {

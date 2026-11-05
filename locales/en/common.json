@@ -577,6 +577,9 @@
       "unverified_sent_from": "This message claims to be from {domain}, but it was sent from {host} and has no valid signature from {domain}.",
       "failed": "This message claims to be from {domain}, but it failed that domain's sender checks. It may be forged.",
       "failed_sent_from": "This message claims to be from {domain}, but it was sent from {host} and failed {domain}'s sender checks. It may be forged.",
+      "forwarded_label": "Via mail filter",
+      "forwarded": "This message came through your organisation's mail filter, so the sending server couldn't be checked, and it has no signature from {domain}.",
+      "forwarded_sent_from": "This message came through your organisation's mail filter. It was sent from {host} and has no signature from {domain}.",
       "caution": "Be careful with links, attachments and requests for passwords or payment details."
     },
     "brand_logo": {

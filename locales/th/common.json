@@ -1820,6 +1820,9 @@
       "unverified_sent_from": "ข้อความนี้อ้างว่าส่งมาจาก {domain} แต่ส่งมาจาก {host} และไม่มีลายมือชื่อดิจิทัลที่ถูกต้องจาก {domain}",
       "failed": "ข้อความนี้อ้างว่าส่งมาจาก {domain} แต่ไม่ผ่านการตรวจสอบความปลอดภัยของผู้ส่ง ข้อความนี้อาจเป็นการปลอมแปลง",
       "failed_sent_from": "ข้อความนี้อ้างว่าส่งมาจาก {domain} แต่ส่งมาจาก {host} และไม่ผ่านการตรวจสอบความปลอดภัย อาจเป็นข้อความปลอมแปลง",
+      "forwarded_label": "Via mail filter",
+      "forwarded": "This message came through your organisation's mail filter, so the sending server couldn't be checked, and it has no signature from {domain}.",
+      "forwarded_sent_from": "This message came through your organisation's mail filter. It was sent from {host} and has no signature from {domain}.",
       "caution": "โปรดระมัดระวังการคลิกลิงก์หรือเปิดไฟล์แนบในข้อความนี้"
     },
     "brand_logo": {

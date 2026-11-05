@@ -577,6 +577,9 @@
       "unverified_sent_from": "このメッセージは{domain}からのものとされていますが、実際には{host}から送信されており、{domain}の有効な署名がありません。",
       "failed": "このメッセージは{domain}からのものとされていますが、このドメインの送信者チェックに失敗しました。なりすましの可能性があります。",
       "failed_sent_from": "このメッセージは{domain}からのものとされていますが、実際には{host}から送信されており、{domain}の送信者チェックにも失敗しました。なりすましの可能性があります。",
+      "forwarded_label": "Via mail filter",
+      "forwarded": "This message came through your organisation's mail filter, so the sending server couldn't be checked, and it has no signature from {domain}.",
+      "forwarded_sent_from": "This message came through your organisation's mail filter. It was sent from {host} and has no signature from {domain}.",
       "caution": "リンクや添付ファイル、パスワードや支払い情報の要求には注意してください。"
     },
     "brand_logo": {

@@ -577,6 +577,9 @@
       "unverified_sent_from": "Ce message prétend venir de {domain}, mais il a été envoyé depuis {host} et ne porte aucune signature valide de {domain}.",
       "failed": "Ce message prétend venir de {domain}, mais il a échoué aux vérifications d'expéditeur de ce domaine. Il est peut-être falsifié.",
       "failed_sent_from": "Ce message prétend venir de {domain}, mais il a été envoyé depuis {host} et a échoué aux vérifications d'expéditeur de {domain}. Il est peut-être falsifié.",
+      "forwarded_label": "Via mail filter",
+      "forwarded": "This message came through your organisation's mail filter, so the sending server couldn't be checked, and it has no signature from {domain}.",
+      "forwarded_sent_from": "This message came through your organisation's mail filter. It was sent from {host} and has no signature from {domain}.",
       "caution": "Méfiez-vous des liens, des pièces jointes et des demandes de mots de passe ou d'informations de paiement."
     },
     "brand_logo": {
