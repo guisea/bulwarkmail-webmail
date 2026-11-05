@@ -5387,7 +5387,7 @@ export function EmailViewer({
                 email={sender?.email}
                 size="lg"
                 className="shadow-sm w-10 h-10 group-hover:ring-2 group-hover:ring-primary/30 transition-all"
-                senderWarning={senderVerification ? senderVerificationLabel : undefined}
+                senderWarning={senderVerification && !senderForwarded ? senderVerificationLabel : undefined}
                 brandDomain={brandIndicatorDomain(email)}
               />
             </button>
@@ -5593,7 +5593,7 @@ export function EmailViewer({
                 email={sender?.email}
                 size="lg"
                 className="shadow-sm w-10 h-10 group-hover:ring-2 group-hover:ring-primary/30 transition-all"
-                senderWarning={senderVerification ? senderVerificationLabel : undefined}
+                senderWarning={senderVerification && !senderForwarded ? senderVerificationLabel : undefined}
                 brandDomain={brandIndicatorDomain(email)}
               />
             </button>
