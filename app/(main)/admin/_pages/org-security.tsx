@@ -5,6 +5,7 @@ import { useOrgPolicyDraft } from '@/components/admin/org/use-org-policy-draft';
 import { ExternalMailSection } from '@/components/admin/org/sections/external-mail-section';
 import { InboundGatewaySection } from '@/components/admin/org/sections/inbound-gateway-section';
 import { PhishingReportSection } from '@/components/admin/org/sections/phishing-report-section';
+import { SpamReportSection } from '@/components/admin/org/sections/spam-report-section';
 import { SessionsSection } from '@/components/admin/org/sections/sessions-section';
 import { ThirdPartySection } from '@/components/admin/org/sections/third-party-section';
 
@@ -15,6 +16,7 @@ export function OrgSecurityPage() {
       <ExternalMailSection draft={draft} />
       <InboundGatewaySection draft={draft} />
       <PhishingReportSection draft={draft} />
+      <SpamReportSection draft={draft} />
       <SessionsSection draft={draft} />
       <ThirdPartySection draft={draft} />
     </OrgPage>

@@ -80,6 +80,7 @@ import { PluginSearchResults } from "./plugin-search-results";
 import { commonTagScope } from "@/hooks/use-account-tags";
 import { FolderRetentionLine } from "./retention-notice";
 import { canExport, canPrint } from "@/lib/device-policy";
+import { requestSpamReport } from "@/lib/spam-report-flow";
 
 interface EmailListProps {
   emails: Email[];
@@ -702,7 +703,9 @@ export function EmailList({
     if (!client || isProcessing) return;
     setIsProcessing(true);
     try {
-      const emailIds = resolveSelectedEmails(useEmailStore.getState()).map(e => e.id);
+      const selected = resolveSelectedEmails(useEmailStore.getState());
+      if (requestSpamReport(selected)) return;
+      const emailIds = selected.map(e => e.id);
       const restore = restoreBatchesForSelection(client);
       if (await batchMarkAsSpam(client, emailIds)) {
         toastWithUndo(tSpam('toast_batch', { count: emailIds.length }), undoMoveAction(client, restore, undo));

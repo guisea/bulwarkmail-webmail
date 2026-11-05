@@ -66,3 +66,13 @@ describe('organisation.inboundGateway', () => {
       .toEqual({ domains: ['ik2.com'], mode: 'soften' });
   });
 });
+
+describe('organisation.spamReport', () => {
+  it('is off by default and keeps only an address and a known format', () => {
+    expect(sanitizeOrganisationPolicy({}).spamReport).toEqual({ address: '', format: 'forward' });
+    expect(sanitizeOrganisationPolicy({ spamReport: { address: ' Spam@MXGuardDog.com ', format: 'arf' } }).spamReport)
+      .toEqual({ address: 'spam@mxguarddog.com', format: 'arf' });
+    expect(sanitizeOrganisationPolicy({ spamReport: { address: 'not an address', format: 'fax' } }).spamReport)
+      .toEqual({ address: '', format: 'forward' });
+  });
+});

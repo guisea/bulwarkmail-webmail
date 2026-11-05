@@ -18,6 +18,7 @@ import { PluginDialogHost } from "@/components/plugins/plugin-dialog-host";
 import { PluginFileViewerHost } from "@/components/plugins/plugin-file-viewer-host";
 import { ExternalRecipientConfirmHost } from "@/components/email/external-recipient-confirm";
 import { PhishingReportHost } from "@/components/email/phishing-report-host";
+import { SpamReportHost } from "@/components/email/spam-report-host";
 import { PluginPageNavigator } from "@/components/plugins/plugin-page-navigator";
 import { PaneCycleHost } from "@/components/layout/pane-cycle";
 import { FocusRescueHost } from "@/components/layout/focus-rescue";
@@ -127,6 +128,7 @@ export default async function LocaleLayout({
                   {!IS_LITE && <PluginFileViewerHost />}
                   <ExternalRecipientConfirmHost />
                   <PhishingReportHost />
+                  <SpamReportHost />
                   <MainWindowOnly>
                     <CommandPaletteHost />
                   </MainWindowOnly>

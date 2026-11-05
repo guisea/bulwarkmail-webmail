@@ -975,6 +975,18 @@
     "send_anyway": "그래도 보내기",
     "back": "뒤로"
   },
+  "spam_report": {
+    "confirm_title": "Report spam?",
+    "confirm_message": "{count, plural, one {The message goes to {address} as a spam report and is then deleted.} other {Each of the # messages goes to {address} as its own spam report and is then deleted.}}",
+    "dont_ask": "Don't ask again",
+    "confirm": "Report and delete",
+    "cancel": "Cancel",
+    "sending": "Reporting…",
+    "done": "{count, plural, one {Reported to {address} and deleted.} other {# messages reported to {address} and deleted.}}",
+    "not_deleted": "{count, plural, one {Reported to {address}, but the message couldn't be deleted.} other {Reported to {address}, but # messages couldn't be deleted.}}",
+    "failed": "{count, plural, one {The message couldn't be reported, so it wasn't deleted.} other {# messages couldn't be reported, so they weren't deleted.}}",
+    "no_subject": "(no subject)"
+  },
   "phishing_report": {
     "action": "피싱 신고…",
     "confirm_title": "피싱으로 신고할까요?",

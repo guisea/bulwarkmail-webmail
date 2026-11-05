@@ -36,11 +36,26 @@ export interface PhishingReportSetup {
   format: PhishingReportFormat;
 }
 
-/** The setup in a policy; null while reporting is off (no address). */
-export function phishingReportSetup(policy: SettingsPolicy | null | undefined): PhishingReportSetup | null {
-  const section = policy?.organisation?.phishingReport ?? DEFAULT_ORGANISATION_POLICY.phishingReport;
+/**
+ * What a report says the message is: phishing ("Report phishing"), or spam
+ * ("Mark as spam" while the admin set organisation.spamReport, e.g. the
+ * inbound gateway's spam address).
+ */
+export type ReportKind = 'phishing' | 'spam';
+
+function setupOf(section: { address: string; format: PhishingReportFormat }): PhishingReportSetup | null {
   const address = section.address.trim();
   return address ? { address, format: section.format === 'arf' ? 'arf' : 'forward' } : null;
+}
+
+/** The setup in a policy; null while reporting is off (no address). */
+export function phishingReportSetup(policy: SettingsPolicy | null | undefined): PhishingReportSetup | null {
+  return setupOf(policy?.organisation?.phishingReport ?? DEFAULT_ORGANISATION_POLICY.phishingReport);
+}
+
+/** The spam report setup in a policy; null while "Mark as spam" only moves to Junk. */
+export function spamReportSetup(policy: SettingsPolicy | null | undefined): PhishingReportSetup | null {
+  return setupOf(policy?.organisation?.spamReport ?? DEFAULT_ORGANISATION_POLICY.spamReport);
 }
 
 /** Folders whose messages are the user's own: nothing to report there. */
@@ -65,15 +80,16 @@ export function isReportable(
 }
 
 /** The subject of the report: Microsoft's reporting mailboxes read "Phishing:" as the verdict. */
-export function reportSubject(subject: string | undefined | null): string {
+export function reportSubject(subject: string | undefined | null, kind: ReportKind = 'phishing'): string {
   const clean = (subject ?? '').replace(/[\r\n]+/g, ' ').trim();
-  return clean ? `Phishing: ${clean}` : 'Phishing';
+  const verdict = kind === 'spam' ? 'Spam' : 'Phishing';
+  return clean ? `${verdict}: ${clean}` : verdict;
 }
 
 /** The short text of a forwarded report. English: it is read by the security team, not the user. */
-export function reportText(reporter: { name?: string; email: string }): string {
+export function reportText(reporter: { name?: string; email: string }, kind: ReportKind = 'phishing'): string {
   const who = reporter.name?.trim() ? `${reporter.name.trim()} <${reporter.email}>` : reporter.email;
-  return `Reported as phishing by ${who} with Bulwark.\r\nThe reported message is attached unchanged.\r\n`;
+  return `Reported as ${kind} by ${who} with Bulwark.\r\nThe reported message is attached unchanged.\r\n`;
 }
 
 /** The identity a report goes out from: the login's own address first. */
@@ -90,6 +106,8 @@ export interface ReportContext {
   setup: PhishingReportSetup;
   /** Builds the raw ARF report (lib/phishing-report-arf.ts); needed for format 'arf'. */
   buildArf?: (input: ArfInput) => Promise<Blob>;
+  /** Phishing unless said otherwise. */
+  kind?: ReportKind;
 }
 
 export interface ArfInput {
@@ -98,6 +116,7 @@ export interface ArfInput {
   sourceAccountId: string;
   reporter: Identity;
   to: string;
+  kind?: ReportKind;
 }
 
 /**
@@ -112,7 +131,7 @@ export async function sendPhishingReport(email: Email, ctx: ReportContext): Prom
 
   if (setup.format === 'arf') {
     if (!ctx.buildArf) throw new Error('ARF reports are not available');
-    const raw = await ctx.buildArf({ client, email, sourceAccountId: ctx.sourceAccountId, reporter: identity, to: setup.address });
+    const raw = await ctx.buildArf({ client, email, sourceAccountId: ctx.sourceAccountId, reporter: identity, to: setup.address, kind: ctx.kind });
     // Imported into Drafts and destroyed once submitted: no Sent copy.
     await client.submitRawEmail(raw, identity.id, undefined, [setup.address]);
     return;
@@ -130,8 +149,8 @@ export async function sendPhishingReport(email: Email, ctx: ReportContext): Prom
   }
   await client.sendEmail(
     [setup.address],
-    reportSubject(email.subject),
-    reportText(identity),
+    reportSubject(email.subject, ctx.kind),
+    reportText(identity, ctx.kind),
     undefined,
     undefined,
     identity.id,
