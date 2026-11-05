@@ -56,3 +56,13 @@ describe('applyLitePolicy', () => {
     } });
   });
 });
+
+describe('organisation.inboundGateway', () => {
+  it('is off by default and keeps only domains and a known mode', () => {
+    expect(sanitizeOrganisationPolicy({}).inboundGateway).toEqual({ domains: [], mode: 'soften' });
+    expect(sanitizeOrganisationPolicy({ inboundGateway: { domains: ['IK2.com', '@ik2.io', 'not a domain'], mode: 'hide' } }).inboundGateway)
+      .toEqual({ domains: ['ik2.com', 'ik2.io'], mode: 'hide' });
+    expect(sanitizeOrganisationPolicy({ inboundGateway: { domains: 'ik2.com', mode: 'everything' } }).inboundGateway)
+      .toEqual({ domains: ['ik2.com'], mode: 'soften' });
+  });
+});

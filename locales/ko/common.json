@@ -574,6 +574,9 @@
       "unverified_sent_from": "이 메시지는 {domain}에서 보냈다고 하지만 실제로는 {host}에서 발송되었고 {domain}의 유효한 서명이 없어요.",
       "failed": "이 메시지는 {domain}에서 보냈다고 하지만 해당 도메인의 보낸 사람 확인을 통과하지 못했어요. 위조된 메시지일 수 있어요.",
       "failed_sent_from": "이 메시지는 {domain}에서 보냈다고 하지만 실제로는 {host}에서 발송되었고 {domain}의 보낸 사람 확인을 통과하지 못했어요. 위조된 메시지일 수 있어요.",
+      "forwarded_label": "Via mail filter",
+      "forwarded": "This message came through your organisation's mail filter, so the sending server couldn't be checked, and it has no signature from {domain}.",
+      "forwarded_sent_from": "This message came through your organisation's mail filter. It was sent from {host} and has no signature from {domain}.",
       "caution": "링크, 첨부 파일, 비밀번호나 결제 정보 요청에 주의하세요."
     },
     "brand_logo": {

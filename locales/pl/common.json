@@ -574,6 +574,9 @@
       "unverified_sent_from": "Ta wiadomość twierdzi, że pochodzi z domeny {domain}, ale została wysłana z domeny {host} i nie ma ważnego podpisu domeny {domain}.",
       "failed": "Ta wiadomość twierdzi, że pochodzi z domeny {domain}, ale nie przeszła weryfikacji nadawcy tej domeny. Może być sfałszowana.",
       "failed_sent_from": "Ta wiadomość twierdzi, że pochodzi z domeny {domain}, ale została wysłana z domeny {host} i nie przeszła weryfikacji nadawcy domeny {domain}. Może być sfałszowana.",
+      "forwarded_label": "Via mail filter",
+      "forwarded": "This message came through your organisation's mail filter, so the sending server couldn't be checked, and it has no signature from {domain}.",
+      "forwarded_sent_from": "This message came through your organisation's mail filter. It was sent from {host} and has no signature from {domain}.",
       "caution": "Uważaj na linki, załączniki i prośby o hasła lub dane płatnicze."
     },
     "brand_logo": {
