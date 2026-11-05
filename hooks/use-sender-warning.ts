@@ -25,7 +25,9 @@ export function useSenderWarning(
     () => (hasEmail ? getSenderVerification(results, sender, gateway) : null),
     [hasEmail, results, sender, gateway],
   );
-  if (!verification) return undefined;
-  if (verification.status === "failed") return t("failed_label");
-  return verification.status === "forwarded" ? t("forwarded_label") : t("unverified_label");
+  // Mail the inbound gateway relayed gets the neutral note in the message
+  // view only: a warning shield on every row it forwarded is the noise the
+  // gateway setting exists to remove.
+  if (!verification || verification.status === "forwarded") return undefined;
+  return verification.status === "failed" ? t("failed_label") : t("unverified_label");
 }
