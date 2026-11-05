@@ -577,6 +577,9 @@
       "unverified_sent_from": "Aquest missatge diu que és de {domain}, però s'ha enviat des de {host} i no té cap signatura vàlida de {domain}.",
       "failed": "Aquest missatge diu que és de {domain}, però no ha superat les comprovacions de remitent d'aquest domini. Podria estar falsificat.",
       "failed_sent_from": "Aquest missatge diu que és de {domain}, però s'ha enviat des de {host} i no ha superat les comprovacions de remitent de {domain}. Podria estar falsificat.",
+      "forwarded_label": "Via mail filter",
+      "forwarded": "This message came through your organisation's mail filter, so the sending server couldn't be checked, and it has no signature from {domain}.",
+      "forwarded_sent_from": "This message came through your organisation's mail filter. It was sent from {host} and has no signature from {domain}.",
       "caution": "Aneu amb compte amb els enllaços, els fitxers adjunts i les sol·licituds de contrasenyes o dades de pagament."
     },
     "brand_logo": {

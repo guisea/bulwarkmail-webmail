@@ -577,6 +577,9 @@
       "unverified_sent_from": "此邮件声称来自 {domain}，但它是从 {host} 发出的，并且没有 {domain} 的有效签名。",
       "failed": "此邮件声称来自 {domain}，但未通过该域名的发件人验证。它可能是伪造的。",
       "failed_sent_from": "此邮件声称来自 {domain}，但它是从 {host} 发出的，并且未通过 {domain} 的发件人验证。它可能是伪造的。",
+      "forwarded_label": "Via mail filter",
+      "forwarded": "This message came through your organisation's mail filter, so the sending server couldn't be checked, and it has no signature from {domain}.",
+      "forwarded_sent_from": "This message came through your organisation's mail filter. It was sent from {host} and has no signature from {domain}.",
       "caution": "请谨慎对待其中的链接、附件，以及索要密码或付款信息的请求。"
     },
     "brand_logo": {

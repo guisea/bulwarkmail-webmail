@@ -174,6 +174,7 @@ export const ADMIN_PAGES: readonly AdminPageDef[] = [
     keywords: 'security external warning label recipients domains session timeout idle sign out third party traffic privacy',
     sections: [
       { id: 'external', title: 'External mail', keywords: 'external sender label recipient warning organisation domains contacts' },
+      { id: 'inbound-gateway', title: 'Inbound gateway', keywords: 'inbound gateway mx filter forwarder relay srs spf dmarc unverified sender mxguarddog' },
       { id: 'phishing', title: 'Phishing reports', keywords: 'phishing report spam abuse security desk arf forward' },
       { id: 'sessions', title: 'Sessions', keywords: 'idle timeout maximum length sign out warning' },
       { id: 'third-party', title: 'Third-party traffic', keywords: 'telemetry favicon relay directory outgoing hosts privacy gdpr' },

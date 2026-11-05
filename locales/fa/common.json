@@ -577,6 +577,9 @@
       "unverified_sent_from": "این پیام ادعا می‌کند از {domain} است، اما از {host} ارسال شده و امضای معتبری از {domain} ندارد.",
       "failed": "این پیام ادعا می‌کند از {domain} است، اما در بررسی‌های فرستنده برای این دامنه رد شده است. ممکن است جعلی باشد.",
       "failed_sent_from": "این پیام ادعا می‌کند از {domain} است، اما از {host} ارسال شده و در بررسی‌های فرستنده برای {domain} رد شده است. ممکن است جعلی باشد.",
+      "forwarded_label": "Via mail filter",
+      "forwarded": "This message came through your organisation's mail filter, so the sending server couldn't be checked, and it has no signature from {domain}.",
+      "forwarded_sent_from": "This message came through your organisation's mail filter. It was sent from {host} and has no signature from {domain}.",
       "caution": "مراقب پیوندها، پیوست‌ها و درخواست‌های رمز عبور یا اطلاعات پرداخت باشید."
     },
     "brand_logo": {

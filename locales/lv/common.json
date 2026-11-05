@@ -577,6 +577,9 @@
       "unverified_sent_from": "Šis ziņojums apgalvo, ka ir no domēna {domain}, taču tas nosūtīts no domēna {host}, un tam nav derīga domēna {domain} paraksta.",
       "failed": "Šis ziņojums apgalvo, ka ir no domēna {domain}, taču tas neizturēja šī domēna sūtītāja pārbaudes. Tas var būt viltots.",
       "failed_sent_from": "Šis ziņojums apgalvo, ka ir no domēna {domain}, taču tas nosūtīts no domēna {host} un neizturēja domēna {domain} sūtītāja pārbaudes. Tas var būt viltots.",
+      "forwarded_label": "Via mail filter",
+      "forwarded": "This message came through your organisation's mail filter, so the sending server couldn't be checked, and it has no signature from {domain}.",
+      "forwarded_sent_from": "This message came through your organisation's mail filter. It was sent from {host} and has no signature from {domain}.",
       "caution": "Esiet piesardzīgi ar saitēm, pielikumiem un paroļu vai maksājumu datu pieprasījumiem."
     },
     "brand_logo": {

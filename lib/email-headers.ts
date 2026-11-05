@@ -64,10 +64,28 @@ function hasAlignedSpfPass(auth: AuthenticationResults, fromDomain: string): boo
   return auth.spf?.result === 'pass' && alignedWith(fromDomain, auth.spf.domain);
 }
 
-/** A DKIM pass for a signing domain that aligns with the From domain. */
-function hasAlignedDkimPass(auth: AuthenticationResults, fromDomain: string): boolean {
+/** A DKIM result for a signing domain that aligns with the From domain. */
+function hasAlignedDkimResult(auth: AuthenticationResults, fromDomain: string, result: 'pass' | 'fail'): boolean {
   const entries = auth.dkim?.all ?? (auth.dkim ? [auth.dkim] : []);
-  return entries.some((entry) => entry.result === 'pass' && alignedWith(fromDomain, entry.domain));
+  return entries.some((entry) => entry.result === result && alignedWith(fromDomain, entry.domain));
+}
+
+function hasAlignedDkimPass(auth: AuthenticationResults, fromDomain: string): boolean {
+  return hasAlignedDkimResult(auth, fromDomain, 'pass');
+}
+
+export const INBOUND_GATEWAY_MODES = ['soften', 'hide'] as const;
+export type InboundGatewayMode = (typeof INBOUND_GATEWAY_MODES)[number];
+
+/**
+ * The filtering service in front of the mail server (policy.json
+ * `organisation.inboundGateway`): mail it relays passes SPF for the gateway's
+ * domain, never the sender's. `soften` gives such mail a neutral note in
+ * place of the warning; `hide` shows nothing, trusting the gateway's filter.
+ */
+export interface InboundGateway {
+  domains: readonly string[];
+  mode: InboundGatewayMode;
 }
 
 /**
@@ -111,8 +129,11 @@ export interface SenderVerification {
    * `failed`: the message fails the From domain's checks (see
    * isAuthenticationSpoofed). `unverified`: neither SPF nor DKIM passes, so
    * nothing ties the message to any domain, let alone the one in From.
+   * `forwarded`: it reached the server through the organisation's inbound
+   * gateway, whose SPF pass says nothing about the sender, and no DKIM
+   * signature of the From domain vouches for it either.
    */
-  status: 'failed' | 'unverified';
+  status: 'failed' | 'unverified' | 'forwarded';
   /** Domain of the visible From address. */
   domain: string;
   /** Envelope (MAIL FROM) host, when it differs from `domain`. */
@@ -131,6 +152,7 @@ export interface SenderVerification {
 export function getSenderVerification(
   auth: AuthenticationResults | undefined,
   fromEmail: string | undefined,
+  gateway?: InboundGateway,
 ): SenderVerification | null {
   if (!auth || !fromEmail || (!auth.spf && !auth.dkim && !auth.dmarc)) return null;
   const domain = domainOf(fromEmail);
@@ -148,6 +170,19 @@ export function getSenderVerification(
     ? domainOf(`@${dkimPass.domain}`)
     : envelope ? srsOriginalDomain(envelope) ?? domainOf(envelope) : undefined;
   const sentFrom = senderDomain && senderDomain !== domain ? senderDomain : undefined;
+
+  // Mail the inbound gateway relayed: SPF passed for the gateway, so SPF and
+  // the DMARC verdict built on it describe the gateway, not the sender. Only
+  // a DKIM signature of the From domain still tells anything: a pass clears
+  // the message, a broken one is tampering whichever way the mail came.
+  if (mailFrom?.result === 'pass' || (!mailFrom && auth.spf?.result === 'pass')) {
+    const envelopeDomain = envelope ? domainOf(envelope) : undefined;
+    if (envelopeDomain && gateway?.domains.some((g) => envelopeDomain === g || envelopeDomain.endsWith(`.${g}`))) {
+      if (hasAlignedAuthenticationPass(auth, fromEmail)) return null;
+      if (hasAlignedDkimResult(auth, domain, 'fail')) return { status: 'failed', domain, sentFrom };
+      return gateway.mode === 'hide' ? null : { status: 'forwarded', domain, sentFrom };
+    }
+  }
 
   if (isAuthenticationSpoofed(auth)) return { status: 'failed', domain, sentFrom };
   // Only a pass that aligns with the From domain counts: `spf=pass` for the

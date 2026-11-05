@@ -577,6 +577,9 @@
       "unverified_sent_from": "تدّعي هذه الرسالة أنها من {domain}، لكنها أُرسلت من {host} ولا تحمل توقيعًا صالحًا من {domain}.",
       "failed": "تدّعي هذه الرسالة أنها من {domain}، لكنها لم تجتز فحوصات المرسل الخاصة بهذا النطاق. قد تكون مزوّرة.",
       "failed_sent_from": "تدّعي هذه الرسالة أنها من {domain}، لكنها أُرسلت من {host} ولم تجتز فحوصات المرسل الخاصة بـ {domain}. قد تكون مزوّرة.",
+      "forwarded_label": "Via mail filter",
+      "forwarded": "This message came through your organisation's mail filter, so the sending server couldn't be checked, and it has no signature from {domain}.",
+      "forwarded_sent_from": "This message came through your organisation's mail filter. It was sent from {host} and has no signature from {domain}.",
       "caution": "توخَّ الحذر مع الروابط والمرفقات وطلبات كلمات المرور أو بيانات الدفع."
     },
     "brand_logo": {
