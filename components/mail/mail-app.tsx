@@ -248,6 +248,7 @@ import { useMinimisedComposerFlush } from "@/hooks/use-minimised-composer-flush"
 import { quickReplyEnvelope, saveQuickReplyDraft } from "@/lib/outgoing/quick-reply-envelope";
 import { MailConversationSkeleton, MailSkeleton } from "@/components/boot-skeleton/mail-skeleton";
 import { useSkeletonLabels } from "@/components/boot-skeleton/use-skeleton-labels";
+import { requestSpamReport } from "@/lib/spam-report-flow";
 
 export interface MailAppProps {
   /**
@@ -1266,6 +1267,7 @@ export function MailApp({ linkSegments: routeSegments }: MailAppProps = {}) {
           if (isInJunk) {
             if (await batchUndoSpam(client, ids)) toastWithUndo(t('email_viewer.spam.toast_not_spam_batch', { count: ids.length }), undoMoveAction(client, restore, undo));
           } else {
+            if (requestSpamReport(resolveSelectedEmails(useEmailStore.getState()))) return;
             if (await batchMarkAsSpam(client, ids)) toastWithUndo(t('email_viewer.spam.toast_batch', { count: ids.length }), undoMoveAction(client, restore, undo));
           }
         } catch (error) {
@@ -4115,6 +4117,8 @@ export function MailApp({ linkSegments: routeSegments }: MailAppProps = {}) {
 
   const handleMarkAsSpam = async (emailToMark: Email | null = selectedEmail) => {
     if (!client || !emailToMark) return;
+    // The admin's spam report address takes over: report, then delete.
+    if (requestSpamReport([emailToMark])) return;
 
     // Undo puts it back in its own folders, read state included, as every
     // other Undo does.

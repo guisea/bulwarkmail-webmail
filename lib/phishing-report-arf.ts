@@ -15,7 +15,7 @@
 import type { Email } from '@/lib/jmap/types';
 import { base64Body, displayName, encodeHeaderWord, headerAtom, randomToken, rfc5322Date } from '@/lib/mdn';
 import { deliveryAddresses } from '@/lib/reply-identity';
-import { reportSubject, type ArfInput } from './phishing-report';
+import { reportSubject, type ArfInput, type ReportKind } from './phishing-report';
 
 export interface ArfParts {
   /** Everything before the original's bytes. */
@@ -50,6 +50,7 @@ export function buildArfParts(input: {
   encoding: RawEncoding;
   recipient?: string;
   now?: Date;
+  kind?: ReportKind;
 }): ArfParts {
   const { email, reporter } = input;
   const fromEmail = headerAtom(reporter.email);
@@ -59,12 +60,13 @@ export function buildArfParts(input: {
   const arrival = email.receivedAt ? new Date(email.receivedAt) : null;
   const reportedDomain = senderDomain(email);
   const human = [
-    `This is a phishing report (RFC 5965) sent by ${fromEmail} with Bulwark.`,
+    `This is a ${input.kind === 'spam' ? 'spam' : 'phishing'} report (RFC 5965) sent by ${fromEmail} with Bulwark.`,
     '',
     'The reported message is attached unchanged.',
   ].join('\r\n');
   const report = [
-    'Feedback-Type: fraud',
+    // RFC 5965 §7.3: "abuse" is unsolicited mail, "fraud" is phishing.
+    `Feedback-Type: ${input.kind === 'spam' ? 'abuse' : 'fraud'}`,
     `User-Agent: Bulwark/${appVersion()}`,
     'Version: 1',
     ...(arrival && !Number.isNaN(arrival.getTime()) ? [`Arrival-Date: ${rfc5322Date(arrival)}`] : []),
@@ -76,7 +78,7 @@ export function buildArfParts(input: {
     `Date: ${rfc5322Date(input.now ?? new Date())}`,
     `From: ${fromName ? `${fromName} <${fromEmail}>` : fromEmail}`,
     `To: ${headerAtom(input.to)}`,
-    `Subject: ${encodeHeaderWord(reportSubject(email.subject))}`,
+    `Subject: ${encodeHeaderWord(reportSubject(email.subject, input.kind))}`,
     `Message-ID: <arf.${randomToken()}@${domain}>`,
     'MIME-Version: 1.0',
     'Content-Type: multipart/report; report-type=feedback-report;',
@@ -144,6 +146,7 @@ export async function buildArfReportBlob(input: ArfInput): Promise<Blob> {
     reporter: input.reporter,
     to: input.to,
     encoding: rawEncoding(original),
+    kind: input.kind,
     recipient: deliveryAddresses(email.headers)[0]
       ?? email.to?.find((addr) => addr.email?.toLowerCase() === input.reporter.email.toLowerCase())?.email,
   });

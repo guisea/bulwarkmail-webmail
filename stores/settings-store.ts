@@ -763,6 +763,11 @@ interface SettingsState extends AccessibilitySettings {
   proofreadingPlugins: Record<string, boolean>;
   /** Plugin ids whose "what is sent where" notice the user has seen. */
   proofreadingNoticeSeen: Record<string, boolean>;
+  /**
+   * "Don't ask again" on the spam report question: "Mark as spam" reports
+   * and deletes at once while the admin set organisation.spamReport.
+   */
+  spamReportNoConfirm: boolean;
   /** The language the user writes in: 'auto' or a BCP 47 tag (editor lang, checkers). */
   writingLanguage: string;
   rtlEditingSupport: boolean; // Show a per-paragraph LTR/RTL direction control in the composer (Gmail-style)
@@ -1118,6 +1123,7 @@ const DEFAULT_SETTINGS = {
   proofreading: false,
   proofreadingPlugins: {} as Record<string, boolean>,
   proofreadingNoticeSeen: {} as Record<string, boolean>,
+  spamReportNoConfirm: false,
   writingLanguage: 'auto',
   rtlEditingSupport: false,
   subAddressDelimiter: DEFAULT_SUB_ADDRESS_DELIMITER,
@@ -1595,6 +1601,7 @@ export const useSettingsStore = create<SettingsState>()(
           returnToListAfterAction: state.returnToListAfterAction,
           confirmBulkDelete: state.confirmBulkDelete,
           permanentlyDeleteJunk: state.permanentlyDeleteJunk,
+          spamReportNoConfirm: state.spamReportNoConfirm,
           clearSearchOnFolderChange: state.clearSearchOnFolderChange,
           searchDefaultScope: state.searchDefaultScope,
           showPreview: state.showPreview,

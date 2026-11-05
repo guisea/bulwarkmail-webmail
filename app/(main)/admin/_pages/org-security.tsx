@@ -4,6 +4,7 @@ import { OrgPage } from '@/components/admin/org/org-page';
 import { useOrgPolicyDraft } from '@/components/admin/org/use-org-policy-draft';
 import { ExternalMailSection } from '@/components/admin/org/sections/external-mail-section';
 import { PhishingReportSection } from '@/components/admin/org/sections/phishing-report-section';
+import { SpamReportSection } from '@/components/admin/org/sections/spam-report-section';
 import { SessionsSection } from '@/components/admin/org/sections/sessions-section';
 import { ThirdPartySection } from '@/components/admin/org/sections/third-party-section';
 
@@ -13,6 +14,7 @@ export function OrgSecurityPage() {
     <OrgPage pageId="org-security" draft={draft}>
       <ExternalMailSection draft={draft} />
       <PhishingReportSection draft={draft} />
+      <SpamReportSection draft={draft} />
       <SessionsSection draft={draft} />
       <ThirdPartySection draft={draft} />
     </OrgPage>
