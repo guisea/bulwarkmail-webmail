@@ -2073,7 +2073,7 @@
       },
       "confirm_spam_report": {
         "label": "Ask before reporting spam",
-        "description": "Mark as spam sends the message to {address} and deletes it. Turn this on to be asked first each time."
+        "description": "Report spam sends the message to {address} and deletes it. Turn this on to be asked first each time."
       },
       "mail_layout": {
         "label": "Mail layout",
