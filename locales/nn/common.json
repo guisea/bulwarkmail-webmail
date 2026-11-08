@@ -577,6 +577,9 @@
       "unverified_sent_from": "Denne meldinga hevdar å vere frå {domain}, men ho vart send frå {host} og har inga gyldig signatur frå {domain}.",
       "failed": "Denne meldinga hevdar å vere frå {domain}, men ho feila avsendarkontrollane til domenet. Ho kan vere forfalska.",
       "failed_sent_from": "Denne meldinga hevdar å vere frå {domain}, men ho vart send frå {host} og feila avsendarkontrollane til {domain}. Ho kan vere forfalska.",
+      "forwarded_label": "Via e-postfilter",
+      "forwarded": "Denne meldinga kom gjennom e-postfilteret til organisasjonen, så avsendartenaren kunne ikkje kontrollerast, og ho har inga signatur frå {domain}.",
+      "forwarded_sent_from": "Denne meldinga kom gjennom e-postfilteret til organisasjonen. Ho vart send frå {host} og har inga signatur frå {domain}.",
       "caution": "Vær varsam med lenkjer, vedlegg og førespurnader om passord eller betalingsopplysingar."
     },
     "brand_logo": {

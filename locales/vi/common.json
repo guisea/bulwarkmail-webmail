@@ -577,9 +577,9 @@
       "unverified_sent_from": "Thư này tuyên bố là từ {domain}, nhưng nó được gửi từ {host} và không có chữ ký hợp lệ từ {domain}.",
       "failed": "Thư này được cho là gửi từ {domain}, nhưng quá trình kiểm tra người gửi của miền đó không thành công. Nó có thể bị giả mạo.",
       "failed_sent_from": "Thư này được cho là gửi từ {domain}, nhưng nó được gửi từ {host} và {domain} không kiểm tra được người gửi. Nó có thể bị giả mạo.",
-      "forwarded_label": "Via mail filter",
-      "forwarded": "This message came through your organisation's mail filter, so the sending server couldn't be checked, and it has no signature from {domain}.",
-      "forwarded_sent_from": "This message came through your organisation's mail filter. It was sent from {host} and has no signature from {domain}.",
+      "forwarded_label": "Qua bộ lọc thư",
+      "forwarded": "Thư này đi qua bộ lọc thư của tổ chức nên không thể kiểm tra máy chủ gửi, và thư không có chữ ký từ {domain}.",
+      "forwarded_sent_from": "Thư này đi qua bộ lọc thư của tổ chức. Thư được gửi từ {host} và không có chữ ký từ {domain}.",
       "caution": "Hãy cẩn thận với các liên kết, tệp đính kèm và yêu cầu mật khẩu hoặc chi tiết thanh toán."
     },
     "brand_logo": {

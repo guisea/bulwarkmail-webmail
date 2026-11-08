@@ -577,9 +577,9 @@
       "unverified_sent_from": "Dit bericht beweert van {domain} te komen, maar is verzonden vanaf {host} en heeft geen geldige handtekening van {domain}.",
       "failed": "Dit bericht beweert van {domain} te komen, maar is niet door de afzendercontroles van dat domein gekomen. Het kan vervalst zijn.",
       "failed_sent_from": "Dit bericht beweert van {domain} te komen, maar is verzonden vanaf {host} en is niet door de afzendercontroles van {domain} gekomen. Het kan vervalst zijn.",
-      "forwarded_label": "Via mail filter",
-      "forwarded": "This message came through your organisation's mail filter, so the sending server couldn't be checked, and it has no signature from {domain}.",
-      "forwarded_sent_from": "This message came through your organisation's mail filter. It was sent from {host} and has no signature from {domain}.",
+      "forwarded_label": "Via mailfilter",
+      "forwarded": "Dit bericht kwam via het mailfilter van je organisatie, dus de verzendende server kon niet worden gecontroleerd, en het heeft geen handtekening van {domain}.",
+      "forwarded_sent_from": "Dit bericht kwam via het mailfilter van je organisatie. Het is verzonden vanaf {host} en heeft geen handtekening van {domain}.",
       "caution": "Wees voorzichtig met links, bijlagen en verzoeken om wachtwoorden of betaalgegevens."
     },
     "brand_logo": {

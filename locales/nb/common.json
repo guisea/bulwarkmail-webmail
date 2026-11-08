@@ -577,9 +577,9 @@
       "unverified_sent_from": "Denne meldingen utgir seg for å være fra {domain}, men den ble sendt fra {host} og har ingen gyldig signatur fra {domain}.",
       "failed": "Denne meldingen utgir seg for å være fra {domain}, men den besto ikke domenets avsenderkontroller. Den kan være forfalsket.",
       "failed_sent_from": "Denne meldingen utgir seg for å være fra {domain}, men den ble sendt fra {host} og besto ikke avsenderkontrollene til {domain}. Den kan være forfalsket.",
-      "forwarded_label": "Via mail filter",
-      "forwarded": "This message came through your organisation's mail filter, so the sending server couldn't be checked, and it has no signature from {domain}.",
-      "forwarded_sent_from": "This message came through your organisation's mail filter. It was sent from {host} and has no signature from {domain}.",
+      "forwarded_label": "Via e-postfilter",
+      "forwarded": "Denne meldingen kom gjennom organisasjonens e-postfilter, så avsenderserveren kunne ikke kontrolleres, og den har ingen signatur fra {domain}.",
+      "forwarded_sent_from": "Denne meldingen kom gjennom organisasjonens e-postfilter. Den ble sendt fra {host} og har ingen signatur fra {domain}.",
       "caution": "Vær forsiktig med lenker, vedlegg og forespørsler om passord eller betalingsopplysninger."
     },
     "brand_logo": {

@@ -577,9 +577,9 @@
       "unverified_sent_from": "Энэ зурвас {domain} домэйнээс ирсэн гэж мэдэгдэж байгаа ч {host} домэйнээс илгээгдсэн бөгөөд {domain} домэйны хүчинтэй гарын үсэг байхгүй байна.",
       "failed": "Энэ зурвас {domain} домэйнээс ирсэн гэж мэдэгдэж байгаа ч тухайн домэйны илгээгчийн шалгалтыг давж чадаагүй. Хуурамч байж магадгүй.",
       "failed_sent_from": "Энэ зурвас {domain} домэйнээс ирсэн гэж мэдэгдэж байгаа ч {host} домэйнээс илгээгдсэн бөгөөд {domain} домэйны илгээгчийн шалгалтыг давж чадаагүй. Хуурамч байж магадгүй.",
-      "forwarded_label": "Via mail filter",
-      "forwarded": "This message came through your organisation's mail filter, so the sending server couldn't be checked, and it has no signature from {domain}.",
-      "forwarded_sent_from": "This message came through your organisation's mail filter. It was sent from {host} and has no signature from {domain}.",
+      "forwarded_label": "Шуудангийн шүүлтүүрээр дамжсан",
+      "forwarded": "Энэ зурвас байгууллагын шуудангийн шүүлтүүрээр дамжиж ирсэн тул илгээгч серверийг шалгах боломжгүй байсан бөгөөд {domain} домэйны гарын үсэг байхгүй байна.",
+      "forwarded_sent_from": "Энэ зурвас байгууллагын шуудангийн шүүлтүүрээр дамжиж ирсэн. Үүнийг {host}-с илгээсэн бөгөөд {domain} домэйны гарын үсэг байхгүй байна.",
       "caution": "Холбоос, хавсралт болон нууц үг, төлбөрийн мэдээлэл асуусан хүсэлтэд болгоомжтой хандаарай."
     },
     "brand_logo": {

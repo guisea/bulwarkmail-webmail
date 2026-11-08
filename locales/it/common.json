@@ -577,9 +577,9 @@
       "unverified_sent_from": "Questo messaggio dichiara di provenire da {domain}, ma è stato inviato da {host} e non ha una firma valida di {domain}.",
       "failed": "Questo messaggio dichiara di provenire da {domain}, ma non ha superato i controlli sul mittente di quel dominio. Potrebbe essere falsificato.",
       "failed_sent_from": "Questo messaggio dichiara di provenire da {domain}, ma è stato inviato da {host} e non ha superato i controlli sul mittente di {domain}. Potrebbe essere falsificato.",
-      "forwarded_label": "Via mail filter",
-      "forwarded": "This message came through your organisation's mail filter, so the sending server couldn't be checked, and it has no signature from {domain}.",
-      "forwarded_sent_from": "This message came through your organisation's mail filter. It was sent from {host} and has no signature from {domain}.",
+      "forwarded_label": "Tramite filtro di posta",
+      "forwarded": "Questo messaggio è passato dal filtro di posta dell'organizzazione, quindi non è stato possibile verificare il server di invio, e non ha alcuna firma di {domain}.",
+      "forwarded_sent_from": "Questo messaggio è passato dal filtro di posta dell'organizzazione. È stato inviato da {host} e non ha alcuna firma di {domain}.",
       "caution": "Fai attenzione a link, allegati e richieste di password o dati di pagamento."
     },
     "brand_logo": {

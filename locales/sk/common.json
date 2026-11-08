@@ -577,9 +577,9 @@
       "unverified_sent_from": "Táto správa tvrdí, že pochádza z domény {domain}, ale bola odoslaná z domény {host} a nemá platný podpis domény {domain}.",
       "failed": "Táto správa tvrdí, že pochádza z domény {domain}, ale neprešla kontrolami odosielateľa tejto domény. Môže byť podvrhnutá.",
       "failed_sent_from": "Táto správa tvrdí, že pochádza z domény {domain}, ale bola odoslaná z domény {host} a neprešla kontrolami odosielateľa domény {domain}. Môže byť podvrhnutá.",
-      "forwarded_label": "Via mail filter",
-      "forwarded": "This message came through your organisation's mail filter, so the sending server couldn't be checked, and it has no signature from {domain}.",
-      "forwarded_sent_from": "This message came through your organisation's mail filter. It was sent from {host} and has no signature from {domain}.",
+      "forwarded_label": "Cez poštový filter",
+      "forwarded": "Táto správa prešla poštovým filtrom vašej organizácie, takže odosielajúci server nebolo možné overiť, a nemá podpis domény {domain}.",
+      "forwarded_sent_from": "Táto správa prešla poštovým filtrom vašej organizácie. Bola odoslaná z {host} a nemá podpis domény {domain}.",
       "caution": "Buďte opatrní pri odkazoch, prílohách a žiadostiach o heslá alebo platobné údaje."
     },
     "brand_logo": {

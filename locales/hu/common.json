@@ -577,9 +577,9 @@
       "unverified_sent_from": "Ez az üzenet azt állítja, hogy a(z) {domain} tartományból jött, de a(z) {host} tartományból küldték, és nincs érvényes aláírása a(z) {domain} tartománytól.",
       "failed": "Ez az üzenet azt állítja, hogy a(z) {domain} tartományból jött, de nem ment át a tartomány feladóellenőrzésén. Lehet, hogy hamisított.",
       "failed_sent_from": "Ez az üzenet azt állítja, hogy a(z) {domain} tartományból jött, de a(z) {host} tartományból küldték, és nem ment át a(z) {domain} tartomány feladóellenőrzésén. Lehet, hogy hamisított.",
-      "forwarded_label": "Via mail filter",
-      "forwarded": "This message came through your organisation's mail filter, so the sending server couldn't be checked, and it has no signature from {domain}.",
-      "forwarded_sent_from": "This message came through your organisation's mail filter. It was sent from {host} and has no signature from {domain}.",
+      "forwarded_label": "Levélszűrőn keresztül",
+      "forwarded": "Ez az üzenet a szervezet levélszűrőjén keresztül érkezett, ezért a küldő szervert nem lehetett ellenőrizni, és nincs aláírása a(z) {domain} tartománytól.",
+      "forwarded_sent_from": "Ez az üzenet a szervezet levélszűrőjén keresztül érkezett. A(z) {host} küldte, és nincs aláírása a(z) {domain} tartománytól.",
       "caution": "Légy óvatos a linkekkel, a mellékletekkel, és ha jelszót vagy fizetési adatokat kérnek tőled."
     },
     "brand_logo": {

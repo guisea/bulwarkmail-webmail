@@ -577,9 +577,9 @@
       "unverified_sent_from": "See kiri väidab, et on saadetud domeenilt {domain}, kuid see saadeti hostilt {host} ja sellel puudub domeeni {domain} kehtiv allkiri.",
       "failed": "See kiri väidab, et on saadetud domeenilt {domain}, kuid see ei läbinud selle domeeni saatjakontrolle. See võib olla võltsitud.",
       "failed_sent_from": "See kiri väidab, et on saadetud domeenilt {domain}, kuid see saadeti hostilt {host} ega läbinud domeeni {domain} saatjakontrolle. See võib olla võltsitud.",
-      "forwarded_label": "Via mail filter",
-      "forwarded": "This message came through your organisation's mail filter, so the sending server couldn't be checked, and it has no signature from {domain}.",
-      "forwarded_sent_from": "This message came through your organisation's mail filter. It was sent from {host} and has no signature from {domain}.",
+      "forwarded_label": "Postifiltri kaudu",
+      "forwarded": "See kiri tuli läbi organisatsiooni postifiltri, mistõttu saatvat serverit ei saanud kontrollida, ja sellel puudub domeeni {domain} allkiri.",
+      "forwarded_sent_from": "See kiri tuli läbi organisatsiooni postifiltri. See saadeti serverist {host} ja sellel puudub domeeni {domain} allkiri.",
       "caution": "Ole ettevaatlik linkide, manuste ning paroolide või makseandmete küsimistega."
     },
     "brand_logo": {
