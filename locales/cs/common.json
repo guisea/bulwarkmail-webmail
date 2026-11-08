@@ -2068,6 +2068,10 @@
         "label": "Potvrdit před smazáním více zpráv",
         "description": "Zeptat se před přesunem více vybraných zpráv do koše. Trvalé smazání se ptá vždy."
       },
+      "confirm_spam_report": {
+        "label": "Ask before reporting spam",
+        "description": "Mark as spam sends the message to {address} and deletes it. Turn this on to be asked first each time."
+      },
       "mail_layout": {
         "label": "Rozložení pošty",
         "description": "Kde se na obrazovce zobrazí seznam zpráv a otevřená zpráva.",

@@ -2071,6 +2071,10 @@
         "label": "Олон захиа устгахаас өмнө баталгаажуулах",
         "description": "Сонгосон олон захиаг хогийн сав руу зөөхөөс өмнө асуух. Бүрмөсөн устгах үед үргэлж асууна."
       },
+      "confirm_spam_report": {
+        "label": "Ask before reporting spam",
+        "description": "Mark as spam sends the message to {address} and deletes it. Turn this on to be asked first each time."
+      },
       "mail_layout": {
         "label": "Мэйлийн зохион байгуулалт",
         "description": "Имэйлийн жагсаалт болон нээлттэй имэйл дэлгэцийн хаана байрлах.",

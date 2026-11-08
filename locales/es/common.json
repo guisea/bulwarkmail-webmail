@@ -2068,6 +2068,10 @@
         "label": "Confirmar antes de eliminar varios mensajes",
         "description": "Preguntar antes de mover varios mensajes seleccionados a la papelera. La eliminación definitiva siempre pregunta."
       },
+      "confirm_spam_report": {
+        "label": "Ask before reporting spam",
+        "description": "Mark as spam sends the message to {address} and deletes it. Turn this on to be asked first each time."
+      },
       "mail_layout": {
         "label": "Diseño del correo",
         "description": "Dónde van la lista de mensajes y el mensaje abierto en la pantalla.",

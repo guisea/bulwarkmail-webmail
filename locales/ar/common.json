@@ -2071,6 +2071,10 @@
         "label": "التأكيد قبل حذف عدة رسائل",
         "description": "السؤال قبل نقل عدة رسائل محددة إلى سلة المهملات. الحذف النهائي يطلب التأكيد دائمًا."
       },
+      "confirm_spam_report": {
+        "label": "Ask before reporting spam",
+        "description": "Mark as spam sends the message to {address} and deletes it. Turn this on to be asked first each time."
+      },
       "mail_layout": {
         "label": "تخطيط البريد",
         "description": "مكان قائمة الرسائل والرسالة المفتوحة على الشاشة.",

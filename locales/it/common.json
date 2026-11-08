@@ -2068,6 +2068,10 @@
         "label": "Conferma prima di eliminare più messaggi",
         "description": "Chiedi prima di spostare più messaggi selezionati nel cestino. L'eliminazione definitiva chiede sempre."
       },
+      "confirm_spam_report": {
+        "label": "Ask before reporting spam",
+        "description": "Mark as spam sends the message to {address} and deletes it. Turn this on to be asked first each time."
+      },
       "mail_layout": {
         "label": "Layout della posta",
         "description": "Dove si trovano sullo schermo l'elenco dei messaggi e il messaggio aperto.",

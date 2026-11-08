@@ -2071,6 +2071,10 @@
         "label": "Confirma abans d'eliminar diversos missatges",
         "description": "Pregunta abans de moure diversos missatges seleccionats a la paperera. L'eliminació definitiva sempre demana confirmació."
       },
+      "confirm_spam_report": {
+        "label": "Ask before reporting spam",
+        "description": "Mark as spam sends the message to {address} and deletes it. Turn this on to be asked first each time."
+      },
       "mail_layout": {
         "label": "Disposició del correu",
         "description": "On van la llista de missatges i el missatge obert a la pantalla.",

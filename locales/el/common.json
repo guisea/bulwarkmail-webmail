@@ -2071,6 +2071,10 @@
         "label": "Επιβεβαιώστε πριν διαγράψετε πολλά μηνύματα",
         "description": "Ρωτήστε πριν μετακινήσετε πολλά επιλεγμένα μηνύματα στον Κάδο απορριμμάτων. Η οριστική διαγραφή ζητά πάντα."
       },
+      "confirm_spam_report": {
+        "label": "Ask before reporting spam",
+        "description": "Mark as spam sends the message to {address} and deletes it. Turn this on to be asked first each time."
+      },
       "mail_layout": {
         "label": "Διάταξη αλληλογραφίας",
         "description": "Όπου εμφανίζεται η λίστα μηνυμάτων και το ανοιχτό μήνυμα στην οθόνη.",

@@ -37,6 +37,7 @@ const { useContactStore } = await import('@/stores/contact-store');
 const { useEmailStore } = await import('@/stores/email-store');
 const { useAccountStore } = await import('@/stores/account-store');
 const { useFilesSyncStore } = await import('@/stores/files-sync-store');
+const { usePolicyStore } = await import('@/stores/policy-store');
 const { TourProvider } = await import('@/components/tour/tour-provider');
 const { SETTINGS_TAB_IDS } = await import('@/lib/settings-tabs');
 const { AdvancedSettingsProvider } = await import('../settings-section');
@@ -168,6 +169,13 @@ describe('settings search index', () => {
         window.matchMedia = ((q: string) => ({ ...realMatchMedia(q), matches: q.includes('coarse') })) as typeof window.matchMedia;
       },
       mountainView: () => { useSettingsStore.setState({ interfaceLayout: 'mountain-view' } as never); },
+      // Mark as spam reports to an address the admin set (organisation.spamReport).
+      spamReport: () => {
+        const { policy } = usePolicyStore.getState();
+        usePolicyStore.setState({
+          policy: { ...policy, organisation: { ...policy.organisation!, spamReport: { address: 'spam@gateway.example', format: 'forward', includeNote: false, note: '' } } },
+        });
+      },
       multiAccount: () => {
         useAccountStore.setState({ accounts: [
           { id: 'a', label: 'A', email: 'a@example.com', username: 'a@example.com', serverUrl: 'https://x', isDefault: true },
@@ -177,9 +185,11 @@ describe('settings search index', () => {
     };
     const settingsInitial = useSettingsStore.getState();
     const accountsInitial = useAccountStore.getState();
+    const policyInitial = usePolicyStore.getState();
     for (const [variant, apply] of Object.entries(variants)) {
     useSettingsStore.setState(settingsInitial, true);
     useAccountStore.setState(accountsInitial, true);
+    usePolicyStore.setState(policyInitial, true);
     window.matchMedia = realMatchMedia;
     window.bulwarkDesktop = undefined;
     useFilesSyncStore.getState().reset();

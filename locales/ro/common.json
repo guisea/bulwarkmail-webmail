@@ -2071,6 +2071,10 @@
         "label": "Confirmă înainte de a șterge mai multe mesaje",
         "description": "Întreabă înainte de a muta mai multe mesaje selectate în coșul de gunoi. Ștergerea definitivă întreabă întotdeauna."
       },
+      "confirm_spam_report": {
+        "label": "Ask before reporting spam",
+        "description": "Mark as spam sends the message to {address} and deletes it. Turn this on to be asked first each time."
+      },
       "mail_layout": {
         "label": "Structura e-mailului",
         "description": "Unde stau pe ecran lista de mesaje și mesajul deschis.",

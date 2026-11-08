@@ -5313,6 +5313,10 @@
         "label": "ยืนยันก่อนลบหลายข้อความ",
         "description": "ถามเพื่อยืนยันก่อนย้ายข้อความที่เลือกหลายฉบับไปยังถังขยะ การลบอย่างถาวรจะถามเพื่อยืนยันเสมอ"
       },
+      "confirm_spam_report": {
+        "label": "Ask before reporting spam",
+        "description": "Mark as spam sends the message to {address} and deletes it. Turn this on to be asked first each time."
+      },
       "mail_layout": {
         "label": "เค้าโครงอีเมล",
         "description": "ตำแหน่งของรายการข้อความและข้อความที่เปิดอยู่บนหน้าจอ",

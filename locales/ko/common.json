@@ -2068,6 +2068,10 @@
         "label": "여러 메시지를 삭제하기 전에 확인",
         "description": "선택한 여러 메시지를 휴지통으로 옮기기 전에 묻습니다. 영구 삭제는 항상 묻습니다."
       },
+      "confirm_spam_report": {
+        "label": "Ask before reporting spam",
+        "description": "Mark as spam sends the message to {address} and deletes it. Turn this on to be asked first each time."
+      },
       "mail_layout": {
         "label": "메일 레이아웃",
         "description": "메시지 목록과 열린 메시지가 화면 어디에 놓이는지 정합니다.",
