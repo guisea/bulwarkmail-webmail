@@ -2071,6 +2071,10 @@
         "label": "Potwierdzaj przed usunięciem wielu wiadomości",
         "description": "Pytaj przed przeniesieniem wielu zaznaczonych wiadomości do kosza. Trwałe usunięcie zawsze pyta."
       },
+      "confirm_spam_report": {
+        "label": "Ask before reporting spam",
+        "description": "Mark as spam sends the message to {address} and deletes it. Turn this on to be asked first each time."
+      },
       "mail_layout": {
         "label": "Układ poczty",
         "description": "Gdzie na ekranie jest lista wiadomości i otwarta wiadomość.",

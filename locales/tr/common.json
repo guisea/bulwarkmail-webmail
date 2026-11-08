@@ -2071,6 +2071,10 @@
         "label": "Birden fazla iletiyi silmeden önce onayla",
         "description": "Seçili birden fazla iletiyi Çöp Kutusu'na taşımadan önce sor. Kalıcı silme her zaman sorar."
       },
+      "confirm_spam_report": {
+        "label": "Ask before reporting spam",
+        "description": "Mark as spam sends the message to {address} and deletes it. Turn this on to be asked first each time."
+      },
       "mail_layout": {
         "label": "Posta Düzeni",
         "description": "İleti listesi ile açık iletinin ekranda nerede durduğu.",

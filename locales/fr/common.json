@@ -2071,6 +2071,10 @@
         "label": "Confirmer avant de supprimer plusieurs messages",
         "description": "Demander avant de déplacer plusieurs messages sélectionnés vers la corbeille. La suppression définitive demande toujours."
       },
+      "confirm_spam_report": {
+        "label": "Ask before reporting spam",
+        "description": "Mark as spam sends the message to {address} and deletes it. Turn this on to be asked first each time."
+      },
       "mail_layout": {
         "label": "Disposition du courrier",
         "description": "Où se placent la liste des messages et le message ouvert à l'écran.",

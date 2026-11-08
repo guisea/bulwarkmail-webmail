@@ -2071,6 +2071,10 @@
         "label": "Vor dem Löschen mehrerer Nachrichten nachfragen",
         "description": "Nachfragen, bevor mehrere ausgewählte Nachrichten in den Papierkorb verschoben werden. Endgültiges Löschen fragt immer nach."
       },
+      "confirm_spam_report": {
+        "label": "Ask before reporting spam",
+        "description": "Mark as spam sends the message to {address} and deletes it. Turn this on to be asked first each time."
+      },
       "mail_layout": {
         "label": "Mail-Layout",
         "description": "Wo die E-Mail-Liste und die geöffnete E-Mail auf dem Bildschirm stehen.",

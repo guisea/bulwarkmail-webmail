@@ -15,6 +15,7 @@ import { MessageListOrderSettings } from './message-list-order-settings';
 import { PrivacyLinkRow } from './privacy-settings';
 import { AlertTriangle, FolderSync, Loader2 } from '@/components/icons';
 import { usePolicyStore } from '@/stores/policy-store';
+import { spamReportSetup } from '@/lib/phishing-report';
 import { allowEmailMove, createMailboxWithHooks, emitEmailMove } from '@/lib/plugin-mail-hooks';
 import type { Mailbox } from '@/lib/jmap/types';
 import type { SearchDefaultScope } from '@/lib/search-default-scope';
@@ -32,6 +33,8 @@ export function MessageListSettings() {
   const [isReorganizing, setIsReorganizing] = useState(false);
   const [reorganizeResult, setReorganizeResult] = useState<string | null>(null);
   const { isSettingLocked, isSettingHidden, isFeatureEnabled } = usePolicyStore();
+  // Only while the admin turned Mark as spam into a report (organisation.spamReport).
+  const spamReportAddress = usePolicyStore((s) => spamReportSetup(s.policy)?.address ?? null);
   const archiveActionEnabled = isFeatureEnabled('archiveActionEnabled');
   // Swipes exist on touch screens only; a mouse user never sees these rows.
   const touchDevice = useMediaQuery('(pointer: coarse)');
@@ -51,6 +54,7 @@ export function MessageListSettings() {
     deleteAction,
     permanentlyDeleteJunk,
     confirmBulkDelete,
+    spamReportNoConfirm,
     swipeRightAction,
     swipeLeftAction,
     clearSearchOnFolderChange,
@@ -363,6 +367,16 @@ export function MessageListSettings() {
             onChange={(checked) => updateSetting('confirmBulkDelete', checked)}
           />
         </SettingItem>
+
+        {spamReportAddress && (
+        <SettingItem label={t('confirm_spam_report.label')} description={t('confirm_spam_report.description', { address: spamReportAddress })}>
+          <ToggleSwitch
+            checked={!spamReportNoConfirm}
+            onChange={(checked) => updateSetting('spamReportNoConfirm', !checked)}
+            testId="settings-confirm-spam-report"
+          />
+        </SettingItem>
+        )}
 
         <SettingItem label={t('permanently_delete_junk.label')} description={t('permanently_delete_junk.description')} advanced>
           <ToggleSwitch

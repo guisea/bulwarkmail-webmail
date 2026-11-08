@@ -2074,6 +2074,10 @@
         "label": "刪除多封郵件前確認",
         "description": "將多封選取的郵件移至垃圾桶前詢問。永久刪除一律會詢問。"
       },
+      "confirm_spam_report": {
+        "label": "Ask before reporting spam",
+        "description": "Mark as spam sends the message to {address} and deletes it. Turn this on to be asked first each time."
+      },
       "mail_layout": {
         "label": "郵件版面配置",
         "description": "郵件清單和開啟的郵件在畫面上的位置。",

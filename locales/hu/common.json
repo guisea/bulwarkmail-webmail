@@ -2074,6 +2074,10 @@
         "label": "Megerősítés több üzenet törlése előtt",
         "description": "Kérdezzen, mielőtt több kijelölt üzenetet a Kukába helyez. A végleges törlés mindig kérdez."
       },
+      "confirm_spam_report": {
+        "label": "Ask before reporting spam",
+        "description": "Mark as spam sends the message to {address} and deletes it. Turn this on to be asked first each time."
+      },
       "mail_layout": {
         "label": "Levelezés elrendezés",
         "description": "Hol jelenik meg a képernyőn az üzenetlista és a megnyitott üzenet.",

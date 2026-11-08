@@ -38,6 +38,8 @@ type Tab = SettingsSearchTab;
 export type SettingsSearchCondition =
   /** A touch screen (pointer: coarse), e.g. the swipe actions. */
   | 'touch'
+  /** The admin turned Mark as spam into a report (organisation.spamReport). */
+  | 'spamReport'
   /** The Mountain View interface layout. */
   | 'mountainView'
   /** More than one account signed in. */
@@ -244,6 +246,7 @@ export const tabSearchEntries: Record<Tab, SettingsSearchEntry[]> = {
     { label: 'settings.email_behavior.delete_action.label' },
     { label: 'settings.email_behavior.archive_mode.label' },
     { label: 'settings.email_behavior.confirm_bulk_delete.label' },
+    { label: 'settings.email_behavior.confirm_spam_report.label', when: 'spamReport' },
     { label: 'settings.email_behavior.permanently_delete_junk.label', advanced: true },
     { label: 'settings.message_list.sections.loading', advanced: true },
     { label: 'settings.email_behavior.emails_per_page.label', advanced: true },

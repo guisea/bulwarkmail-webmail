@@ -2086,6 +2086,10 @@
         "label": "Xác nhận trước khi xóa nhiều thư",
         "description": "Hỏi trước khi chuyển nhiều thư đã chọn vào Thùng rác. Luôn hỏi trước khi xóa vĩnh viễn."
       },
+      "confirm_spam_report": {
+        "label": "Ask before reporting spam",
+        "description": "Mark as spam sends the message to {address} and deletes it. Turn this on to be asked first each time."
+      },
       "mail_layout": {
         "label": "Bố cục thư",
         "description": "Vị trí của danh sách thư và thư đang mở trên màn hình.",

@@ -2071,6 +2071,10 @@
         "label": "Подтверждать удаление нескольких писем",
         "description": "Спрашивать перед перемещением нескольких выбранных писем в корзину. При безвозвратном удалении подтверждение запрашивается всегда."
       },
+      "confirm_spam_report": {
+        "label": "Ask before reporting spam",
+        "description": "Mark as spam sends the message to {address} and deletes it. Turn this on to be asked first each time."
+      },
       "mail_layout": {
         "label": "Макет почты",
         "description": "Где на экране список писем и открытое письмо.",

@@ -2074,6 +2074,10 @@
         "label": "Bekræft før sletning af flere beskeder",
         "description": "Spørg før flere valgte beskeder flyttes til papirkurven. Permanent sletning spørger altid."
       },
+      "confirm_spam_report": {
+        "label": "Ask before reporting spam",
+        "description": "Mark as spam sends the message to {address} and deletes it. Turn this on to be asked first each time."
+      },
       "mail_layout": {
         "label": "Mail-layout",
         "description": "Hvor meddelelseslisten og den åbne meddelelse står på skærmen.",

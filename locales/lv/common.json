@@ -2071,6 +2071,10 @@
         "label": "Apstiprināt pirms vairāku ziņojumu dzēšanas",
         "description": "Jautāt pirms vairāku atlasītu ziņojumu pārvietošanas uz miskasti. Neatgriezeniska dzēšana vienmēr jautā."
       },
+      "confirm_spam_report": {
+        "label": "Ask before reporting spam",
+        "description": "Mark as spam sends the message to {address} and deletes it. Turn this on to be asked first each time."
+      },
       "mail_layout": {
         "label": "Pasta izkārtojums",
         "description": "Kur ekrānā atrodas ziņojumu saraksts un atvērtais ziņojums.",

@@ -2074,6 +2074,10 @@
         "label": "تأیید پیش از حذف چند پیام",
         "description": "پیش از انتقال چند پیام انتخاب‌شده به زباله‌دان بپرس. حذف دائمی همیشه می‌پرسد."
       },
+      "confirm_spam_report": {
+        "label": "Ask before reporting spam",
+        "description": "Mark as spam sends the message to {address} and deletes it. Turn this on to be asked first each time."
+      },
       "mail_layout": {
         "label": "چیدمان ایمیل",
         "description": "جای فهرست پیام‌ها و پیام باز روی صفحه.",

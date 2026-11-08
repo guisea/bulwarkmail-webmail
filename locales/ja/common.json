@@ -2071,6 +2071,10 @@
         "label": "複数のメッセージを削除する前に確認する",
         "description": "選択した複数のメッセージをゴミ箱に移動する前に確認します。完全に削除する場合は常に確認します。"
       },
+      "confirm_spam_report": {
+        "label": "Ask before reporting spam",
+        "description": "Mark as spam sends the message to {address} and deletes it. Turn this on to be asked first each time."
+      },
       "mail_layout": {
         "label": "メールレイアウト",
         "description": "メッセージ一覧と開いたメッセージを画面のどこに表示するか。",

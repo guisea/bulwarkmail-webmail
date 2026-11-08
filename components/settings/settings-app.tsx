@@ -107,6 +107,7 @@ import { useDesktopWindowName } from '@/lib/desktop/window-name';
 import { MvTopBar } from "@/components/layout/mv-top-bar";
 import { useMountainViewShell } from "@/hooks/use-mountain-view-shell";
 import { scrollBehavior } from '@/lib/reduced-motion';
+import { spamReportSetup } from '@/lib/phishing-report';
 
 type Tab = SettingsSearchTab;
 
@@ -379,6 +380,7 @@ export function SettingsApp({ linkSegments: routeSegments }: SettingsAppProps = 
   const touchScreen = useMediaQuery('(pointer: coarse)');
   const mountainViewLayout = useSettingsStore((s) => s.interfaceLayout === 'mountain-view');
   const multiAccount = useAccountStore((s) => s.accounts.length > 0);
+  const spamReportOn = usePolicyStore((s) => !!spamReportSetup(s.policy));
   const { tabSearchHaystacks, tabSubResults } = useMemo(() => {
     const haystacks: Partial<Record<Tab, string>> = {};
     const subs: Partial<Record<Tab, SubResult[]>> = {};
@@ -388,6 +390,7 @@ export function SettingsApp({ linkSegments: routeSegments }: SettingsAppProps = 
       if (entry.when === 'touch') return touchScreen;
       if (entry.when === 'mountainView') return mountainViewLayout;
       if (entry.when === 'multiAccount') return multiAccount;
+      if (entry.when === 'spamReport') return spamReportOn;
       // The desktop app's own rows (settings-p2-5), and the browser's that it hides.
       const desktop = getDesktopBridge();
       if (entry.when === 'desktop') return !!desktop;
@@ -457,7 +460,7 @@ export function SettingsApp({ linkSegments: routeSegments }: SettingsAppProps = 
       ];
     }
     return { tabSearchHaystacks: haystacks, tabSubResults: subs };
-  }, [messages, installedPlugins, installedThemes, sidebarAppsList, archiveActionEnabled, appName, touchScreen, mountainViewLayout, multiAccount]);
+  }, [messages, installedPlugins, installedThemes, sidebarAppsList, archiveActionEnabled, appName, touchScreen, mountainViewLayout, multiAccount, spamReportOn]);
 
   // Sidebar resize state
   const [settingsSidebarWidth, setSettingsSidebarWidth] = useState(() => {

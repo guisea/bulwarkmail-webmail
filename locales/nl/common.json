@@ -2071,6 +2071,10 @@
         "label": "Bevestigen voor het verwijderen van meerdere berichten",
         "description": "Vragen voordat meerdere geselecteerde berichten naar de prullenbak gaan. Definitief verwijderen vraagt altijd."
       },
+      "confirm_spam_report": {
+        "label": "Ask before reporting spam",
+        "description": "Mark as spam sends the message to {address} and deletes it. Turn this on to be asked first each time."
+      },
       "mail_layout": {
         "label": "E-mailindeling",
         "description": "Waar de berichtenlijst en het geopende bericht op het scherm staan.",
