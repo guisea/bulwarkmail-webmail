@@ -976,16 +976,16 @@
     "back": "返回"
   },
   "spam_report": {
-    "confirm_title": "Report spam?",
-    "confirm_message": "{count, plural, one {The message goes to {address} as a spam report and is then deleted.} other {Each of the # messages goes to {address} as its own spam report and is then deleted.}}",
-    "dont_ask": "Don't ask again",
-    "confirm": "Report and delete",
-    "cancel": "Cancel",
-    "sending": "Reporting…",
-    "done": "{count, plural, one {Reported to {address} and deleted.} other {# messages reported to {address} and deleted.}}",
-    "not_deleted": "{count, plural, one {Reported to {address}, but the message couldn't be deleted.} other {Reported to {address}, but # messages couldn't be deleted.}}",
-    "failed": "{count, plural, one {The message couldn't be reported, so it wasn't deleted.} other {# messages couldn't be reported, so they weren't deleted.}}",
-    "no_subject": "(no subject)"
+    "confirm_title": "举报垃圾邮件？",
+    "confirm_message": "{count, plural, =1 {该邮件将作为垃圾邮件举报发送到 {address}，然后被删除。} other {这 # 封邮件将分别作为单独的垃圾邮件举报发送到 {address}，然后被删除。}}",
+    "dont_ask": "不再询问",
+    "confirm": "举报并删除",
+    "cancel": "取消",
+    "sending": "正在举报…",
+    "done": "{count, plural, =1 {已举报到 {address} 并删除。} other {已将 # 封邮件举报到 {address} 并删除。}}",
+    "not_deleted": "{count, plural, =1 {已举报到 {address}，但无法删除该邮件。} other {已举报到 {address}，但无法删除 # 封邮件。}}",
+    "failed": "{count, plural, =1 {无法举报该邮件，因此未将其删除。} other {无法举报 # 封邮件，因此未将其删除。}}",
+    "no_subject": "（无主题）"
   },
   "phishing_report": {
     "action": "举报网络钓鱼…",
@@ -2069,8 +2069,8 @@
         "description": "将多封选中的邮件移到废纸篓前询问。永久删除始终会询问。"
       },
       "confirm_spam_report": {
-        "label": "Ask before reporting spam",
-        "description": "Mark as spam sends the message to {address} and deletes it. Turn this on to be asked first each time."
+        "label": "举报垃圾邮件前询问",
+        "description": "“举报垃圾邮件”会将邮件发送到 {address} 并删除。开启后每次都会先询问。"
       },
       "mail_layout": {
         "label": "邮件布局",

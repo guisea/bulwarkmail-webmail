@@ -976,16 +976,16 @@
     "back": "Zurück"
   },
   "spam_report": {
-    "confirm_title": "Report spam?",
-    "confirm_message": "{count, plural, one {The message goes to {address} as a spam report and is then deleted.} other {Each of the # messages goes to {address} as its own spam report and is then deleted.}}",
-    "dont_ask": "Don't ask again",
-    "confirm": "Report and delete",
-    "cancel": "Cancel",
-    "sending": "Reporting…",
-    "done": "{count, plural, one {Reported to {address} and deleted.} other {# messages reported to {address} and deleted.}}",
-    "not_deleted": "{count, plural, one {Reported to {address}, but the message couldn't be deleted.} other {Reported to {address}, but # messages couldn't be deleted.}}",
-    "failed": "{count, plural, one {The message couldn't be reported, so it wasn't deleted.} other {# messages couldn't be reported, so they weren't deleted.}}",
-    "no_subject": "(no subject)"
+    "confirm_title": "Spam melden?",
+    "confirm_message": "{count, plural, one {Die Nachricht geht als Spam-Meldung an {address} und wird dann gelöscht.} other {Jede der # Nachrichten geht als eigene Spam-Meldung an {address} und wird dann gelöscht.}}",
+    "dont_ask": "Nicht mehr fragen",
+    "confirm": "Melden und löschen",
+    "cancel": "Abbrechen",
+    "sending": "Wird gemeldet…",
+    "done": "{count, plural, one {An {address} gemeldet und gelöscht.} other {# Nachrichten an {address} gemeldet und gelöscht.}}",
+    "not_deleted": "{count, plural, one {An {address} gemeldet, aber die Nachricht konnte nicht gelöscht werden.} other {An {address} gemeldet, aber # Nachrichten konnten nicht gelöscht werden.}}",
+    "failed": "{count, plural, one {Die Nachricht konnte nicht gemeldet werden und wurde daher nicht gelöscht.} other {# Nachrichten konnten nicht gemeldet werden und wurden daher nicht gelöscht.}}",
+    "no_subject": "(kein Betreff)"
   },
   "phishing_report": {
     "action": "Phishing melden…",
@@ -2069,8 +2069,8 @@
         "description": "Nachfragen, bevor mehrere ausgewählte Nachrichten in den Papierkorb verschoben werden. Endgültiges Löschen fragt immer nach."
       },
       "confirm_spam_report": {
-        "label": "Ask before reporting spam",
-        "description": "Mark as spam sends the message to {address} and deletes it. Turn this on to be asked first each time."
+        "label": "Vor dem Melden von Spam fragen",
+        "description": "„Spam melden“ sendet die Nachricht an {address} und löscht sie. Aktivieren Sie dies, um jedes Mal vorher gefragt zu werden."
       },
       "mail_layout": {
         "label": "Mail-Layout",

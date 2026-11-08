@@ -976,16 +976,16 @@
     "back": "뒤로"
   },
   "spam_report": {
-    "confirm_title": "Report spam?",
-    "confirm_message": "{count, plural, one {The message goes to {address} as a spam report and is then deleted.} other {Each of the # messages goes to {address} as its own spam report and is then deleted.}}",
-    "dont_ask": "Don't ask again",
-    "confirm": "Report and delete",
-    "cancel": "Cancel",
-    "sending": "Reporting…",
-    "done": "{count, plural, one {Reported to {address} and deleted.} other {# messages reported to {address} and deleted.}}",
-    "not_deleted": "{count, plural, one {Reported to {address}, but the message couldn't be deleted.} other {Reported to {address}, but # messages couldn't be deleted.}}",
-    "failed": "{count, plural, one {The message couldn't be reported, so it wasn't deleted.} other {# messages couldn't be reported, so they weren't deleted.}}",
-    "no_subject": "(no subject)"
+    "confirm_title": "스팸으로 신고할까요?",
+    "confirm_message": "{count, plural, =1 {메시지를 스팸 신고로 {address}에 보낸 다음 삭제해요.} other {메시지 #개를 각각 별도의 스팸 신고로 {address}에 보낸 다음 삭제해요.}}",
+    "dont_ask": "다시 묻지 않기",
+    "confirm": "신고 후 삭제",
+    "cancel": "취소",
+    "sending": "신고하는 중…",
+    "done": "{count, plural, =1 {{address}에 신고하고 삭제했어요.} other {메시지 #개를 {address}에 신고하고 삭제했어요.}}",
+    "not_deleted": "{count, plural, =1 {{address}에 신고했지만 메시지를 삭제하지 못했어요.} other {{address}에 신고했지만 메시지 #개를 삭제하지 못했어요.}}",
+    "failed": "{count, plural, =1 {메시지를 신고하지 못해서 삭제하지 않았어요.} other {메시지 #개를 신고하지 못해서 삭제하지 않았어요.}}",
+    "no_subject": "(제목 없음)"
   },
   "phishing_report": {
     "action": "피싱 신고…",
@@ -2069,8 +2069,8 @@
         "description": "선택한 여러 메시지를 휴지통으로 옮기기 전에 묻습니다. 영구 삭제는 항상 묻습니다."
       },
       "confirm_spam_report": {
-        "label": "Ask before reporting spam",
-        "description": "Mark as spam sends the message to {address} and deletes it. Turn this on to be asked first each time."
+        "label": "스팸 신고 전에 묻기",
+        "description": "'스팸 신고'을(를) 누르면 메시지를 {address}에 보내고 삭제해요. 매번 먼저 확인하려면 켜세요."
       },
       "mail_layout": {
         "label": "메일 레이아웃",

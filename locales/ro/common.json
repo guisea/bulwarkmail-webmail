@@ -976,16 +976,16 @@
     "back": "Înapoi"
   },
   "spam_report": {
-    "confirm_title": "Report spam?",
-    "confirm_message": "{count, plural, one {The message goes to {address} as a spam report and is then deleted.} other {Each of the # messages goes to {address} as its own spam report and is then deleted.}}",
-    "dont_ask": "Don't ask again",
-    "confirm": "Report and delete",
-    "cancel": "Cancel",
-    "sending": "Reporting…",
-    "done": "{count, plural, one {Reported to {address} and deleted.} other {# messages reported to {address} and deleted.}}",
-    "not_deleted": "{count, plural, one {Reported to {address}, but the message couldn't be deleted.} other {Reported to {address}, but # messages couldn't be deleted.}}",
-    "failed": "{count, plural, one {The message couldn't be reported, so it wasn't deleted.} other {# messages couldn't be reported, so they weren't deleted.}}",
-    "no_subject": "(no subject)"
+    "confirm_title": "Raportați ca spam?",
+    "confirm_message": "{count, plural, one {Mesajul ajunge la {address} ca raport de spam și apoi este șters.} few {Fiecare dintre cele # mesaje ajunge la {address} ca raport de spam separat și apoi este șters.} other {Fiecare dintre cele # de mesaje ajunge la {address} ca raport de spam separat și apoi este șters.}}",
+    "dont_ask": "Nu mai întreba",
+    "confirm": "Raportează și șterge",
+    "cancel": "Anulează",
+    "sending": "Se raportează…",
+    "done": "{count, plural, one {Raportat la {address} și șters.} few {# mesaje raportate la {address} și șterse.} other {# de mesaje raportate la {address} și șterse.}}",
+    "not_deleted": "{count, plural, one {Raportat la {address}, dar mesajul nu a putut fi șters.} few {Raportat la {address}, dar # mesaje nu au putut fi șterse.} other {Raportat la {address}, dar # de mesaje nu au putut fi șterse.}}",
+    "failed": "{count, plural, one {Mesajul nu a putut fi raportat, așa că nu a fost șters.} few {# mesaje nu au putut fi raportate, așa că nu au fost șterse.} other {# de mesaje nu au putut fi raportate, așa că nu au fost șterse.}}",
+    "no_subject": "(fără subiect)"
   },
   "phishing_report": {
     "action": "Raportează ca phishing…",
@@ -2072,8 +2072,8 @@
         "description": "Întreabă înainte de a muta mai multe mesaje selectate în coșul de gunoi. Ștergerea definitivă întreabă întotdeauna."
       },
       "confirm_spam_report": {
-        "label": "Ask before reporting spam",
-        "description": "Mark as spam sends the message to {address} and deletes it. Turn this on to be asked first each time."
+        "label": "Întreabă înainte de raportarea spamului",
+        "description": "„Raportează spamul” trimite mesajul la {address} și îl șterge. Activați pentru a fi întrebat de fiecare dată."
       },
       "mail_layout": {
         "label": "Structura e-mailului",

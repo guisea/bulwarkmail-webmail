@@ -976,16 +976,16 @@
     "back": "Wstecz"
   },
   "spam_report": {
-    "confirm_title": "Report spam?",
-    "confirm_message": "{count, plural, one {The message goes to {address} as a spam report and is then deleted.} other {Each of the # messages goes to {address} as its own spam report and is then deleted.}}",
-    "dont_ask": "Don't ask again",
-    "confirm": "Report and delete",
-    "cancel": "Cancel",
-    "sending": "Reporting…",
-    "done": "{count, plural, one {Reported to {address} and deleted.} other {# messages reported to {address} and deleted.}}",
-    "not_deleted": "{count, plural, one {Reported to {address}, but the message couldn't be deleted.} other {Reported to {address}, but # messages couldn't be deleted.}}",
-    "failed": "{count, plural, one {The message couldn't be reported, so it wasn't deleted.} other {# messages couldn't be reported, so they weren't deleted.}}",
-    "no_subject": "(no subject)"
+    "confirm_title": "Zgłosić spam?",
+    "confirm_message": "{count, plural, one {Wiadomość trafi do {address} jako zgłoszenie spamu, a następnie zostanie usunięta.} few {# wiadomości trafią do {address}, każda jako osobne zgłoszenie spamu, a następnie zostaną usunięte.} many {# wiadomości trafi do {address}, każda jako osobne zgłoszenie spamu, a następnie zostanie usuniętych.} other {# wiadomości trafi do {address}, każda jako osobne zgłoszenie spamu, a następnie zostanie usuniętych.}}",
+    "dont_ask": "Nie pytaj ponownie",
+    "confirm": "Zgłoś i usuń",
+    "cancel": "Anuluj",
+    "sending": "Zgłaszanie…",
+    "done": "{count, plural, one {Zgłoszono do {address} i usunięto.} few {Zgłoszono # wiadomości do {address} i usunięto je.} many {Zgłoszono # wiadomości do {address} i usunięto je.} other {Zgłoszono # wiadomości do {address} i usunięto je.}}",
+    "not_deleted": "{count, plural, one {Zgłoszono do {address}, ale nie udało się usunąć wiadomości.} few {Zgłoszono do {address}, ale nie udało się usunąć # wiadomości.} many {Zgłoszono do {address}, ale nie udało się usunąć # wiadomości.} other {Zgłoszono do {address}, ale nie udało się usunąć # wiadomości.}}",
+    "failed": "{count, plural, one {Nie udało się zgłosić wiadomości, więc nie została usunięta.} few {Nie udało się zgłosić # wiadomości, więc nie zostały usunięte.} many {Nie udało się zgłosić # wiadomości, więc nie zostały usunięte.} other {Nie udało się zgłosić # wiadomości, więc nie zostały usunięte.}}",
+    "no_subject": "(brak tematu)"
   },
   "phishing_report": {
     "action": "Zgłoś phishing…",
@@ -2069,8 +2069,8 @@
         "description": "Pytaj przed przeniesieniem wielu zaznaczonych wiadomości do kosza. Trwałe usunięcie zawsze pyta."
       },
       "confirm_spam_report": {
-        "label": "Ask before reporting spam",
-        "description": "Mark as spam sends the message to {address} and deletes it. Turn this on to be asked first each time."
+        "label": "Pytaj przed zgłoszeniem spamu",
+        "description": "„Zgłoś spam” wysyła wiadomość do {address} i ją usuwa. Włącz, aby za każdym razem najpierw pojawiało się pytanie."
       },
       "mail_layout": {
         "label": "Układ poczty",

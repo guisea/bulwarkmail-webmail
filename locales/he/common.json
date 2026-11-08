@@ -920,16 +920,16 @@
     "back": "חזרה"
   },
   "spam_report": {
-    "confirm_title": "Report spam?",
-    "confirm_message": "{count, plural, one {The message goes to {address} as a spam report and is then deleted.} other {Each of the # messages goes to {address} as its own spam report and is then deleted.}}",
-    "dont_ask": "Don't ask again",
-    "confirm": "Report and delete",
-    "cancel": "Cancel",
-    "sending": "Reporting…",
-    "done": "{count, plural, one {Reported to {address} and deleted.} other {# messages reported to {address} and deleted.}}",
-    "not_deleted": "{count, plural, one {Reported to {address}, but the message couldn't be deleted.} other {Reported to {address}, but # messages couldn't be deleted.}}",
-    "failed": "{count, plural, one {The message couldn't be reported, so it wasn't deleted.} other {# messages couldn't be reported, so they weren't deleted.}}",
-    "no_subject": "(no subject)"
+    "confirm_title": "לדווח על ספאם?",
+    "confirm_message": "{count, plural, one {ההודעה תישלח אל {address} כדיווח ספאם ולאחר מכן תימחק.} two {כל אחת משתי ההודעות תישלח אל {address} כדיווח ספאם נפרד ולאחר מכן תימחק.} other {כל אחת מ-# ההודעות תישלח אל {address} כדיווח ספאם נפרד ולאחר מכן תימחק.}}",
+    "dont_ask": "לא לשאול שוב",
+    "confirm": "דיווח ומחיקה",
+    "cancel": "ביטול",
+    "sending": "שולח דיווח…",
+    "done": "{count, plural, one {ההודעה דווחה אל {address} ונמחקה.} two {שתי הודעות דווחו אל {address} ונמחקו.} other {# הודעות דווחו אל {address} ונמחקו.}}",
+    "not_deleted": "{count, plural, one {דווח אל {address}, אבל לא ניתן היה למחוק את ההודעה.} two {דווח אל {address}, אבל לא ניתן היה למחוק שתי הודעות.} other {דווח אל {address}, אבל לא ניתן היה למחוק # הודעות.}}",
+    "failed": "{count, plural, one {לא ניתן היה לדווח על ההודעה, ולכן היא לא נמחקה.} two {לא ניתן היה לדווח על שתי הודעות, ולכן הן לא נמחקו.} other {לא ניתן היה לדווח על # הודעות, ולכן הן לא נמחקו.}}",
+    "no_subject": "(ללא נושא)"
   },
   "phishing_report": {
     "action": "דווח על פישינג…",
@@ -2002,8 +2002,8 @@
         "description": "לשאול לפני העברת כמה הודעות שנבחרו לאשפה. מחיקה לצמיתות תמיד שואלת."
       },
       "confirm_spam_report": {
-        "label": "Ask before reporting spam",
-        "description": "Mark as spam sends the message to {address} and deletes it. Turn this on to be asked first each time."
+        "label": "לשאול לפני דיווח על ספאם",
+        "description": "״דווח על ספאם״ שולח את ההודעה אל {address} ומוחק אותה. יש להפעיל כדי לאשר בכל פעם מחדש."
       },
       "mail_layout": {
         "label": "פריסת דואר",

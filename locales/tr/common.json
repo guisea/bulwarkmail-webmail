@@ -976,16 +976,16 @@
     "back": "Geri"
   },
   "spam_report": {
-    "confirm_title": "Report spam?",
-    "confirm_message": "{count, plural, one {The message goes to {address} as a spam report and is then deleted.} other {Each of the # messages goes to {address} as its own spam report and is then deleted.}}",
-    "dont_ask": "Don't ask again",
-    "confirm": "Report and delete",
-    "cancel": "Cancel",
-    "sending": "Reporting…",
-    "done": "{count, plural, one {Reported to {address} and deleted.} other {# messages reported to {address} and deleted.}}",
-    "not_deleted": "{count, plural, one {Reported to {address}, but the message couldn't be deleted.} other {Reported to {address}, but # messages couldn't be deleted.}}",
-    "failed": "{count, plural, one {The message couldn't be reported, so it wasn't deleted.} other {# messages couldn't be reported, so they weren't deleted.}}",
-    "no_subject": "(no subject)"
+    "confirm_title": "Spam olarak bildirilsin mi?",
+    "confirm_message": "{count, plural, one {İleti spam bildirimi olarak {address} adresine gönderilir ve ardından silinir.} other {# iletinin her biri ayrı bir spam bildirimi olarak {address} adresine gönderilir ve ardından silinir.}}",
+    "dont_ask": "Bir daha sorma",
+    "confirm": "Bildir ve sil",
+    "cancel": "İptal",
+    "sending": "Bildiriliyor…",
+    "done": "{count, plural, one {{address} adresine bildirildi ve silindi.} other {# ileti {address} adresine bildirildi ve silindi.}}",
+    "not_deleted": "{count, plural, one {{address} adresine bildirildi, ancak ileti silinemedi.} other {{address} adresine bildirildi, ancak # ileti silinemedi.}}",
+    "failed": "{count, plural, one {İleti bildirilemedi, bu yüzden silinmedi.} other {# ileti bildirilemedi, bu yüzden silinmedi.}}",
+    "no_subject": "(konu yok)"
   },
   "phishing_report": {
     "action": "Kimlik avı bildir…",
@@ -2069,8 +2069,8 @@
         "description": "Seçili birden fazla iletiyi Çöp Kutusu'na taşımadan önce sor. Kalıcı silme her zaman sorar."
       },
       "confirm_spam_report": {
-        "label": "Ask before reporting spam",
-        "description": "Mark as spam sends the message to {address} and deletes it. Turn this on to be asked first each time."
+        "label": "Spam bildirmeden önce sor",
+        "description": "\"Spam bildir\" iletiyi {address} adresine gönderir ve siler. Her seferinde önce sorulması için açın."
       },
       "mail_layout": {
         "label": "Posta Düzeni",

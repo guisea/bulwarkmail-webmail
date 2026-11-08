@@ -976,16 +976,16 @@
     "back": "Назад"
   },
   "spam_report": {
-    "confirm_title": "Report spam?",
-    "confirm_message": "{count, plural, one {The message goes to {address} as a spam report and is then deleted.} other {Each of the # messages goes to {address} as its own spam report and is then deleted.}}",
-    "dont_ask": "Don't ask again",
-    "confirm": "Report and delete",
-    "cancel": "Cancel",
-    "sending": "Reporting…",
-    "done": "{count, plural, one {Reported to {address} and deleted.} other {# messages reported to {address} and deleted.}}",
-    "not_deleted": "{count, plural, one {Reported to {address}, but the message couldn't be deleted.} other {Reported to {address}, but # messages couldn't be deleted.}}",
-    "failed": "{count, plural, one {The message couldn't be reported, so it wasn't deleted.} other {# messages couldn't be reported, so they weren't deleted.}}",
-    "no_subject": "(no subject)"
+    "confirm_title": "Сообщить о спаме?",
+    "confirm_message": "{count, plural, =1 {Письмо будет отправлено на {address} как отчёт о спаме, а затем удалено.} one {# письмо будет отправлено на {address}, каждое отдельным отчётом о спаме, а затем удалено.} few {# письма будут отправлены на {address}, каждое отдельным отчётом о спаме, а затем удалены.} many {# писем будут отправлены на {address}, каждое отдельным отчётом о спаме, а затем удалены.} other {# письма будут отправлены на {address}, каждое отдельным отчётом о спаме, а затем удалены.}}",
+    "dont_ask": "Больше не спрашивать",
+    "confirm": "Сообщить и удалить",
+    "cancel": "Отмена",
+    "sending": "Отправка отчёта…",
+    "done": "{count, plural, =1 {Отправлено на {address} и удалено.} one {# письмо отправлено на {address} и удалено.} few {# письма отправлены на {address} и удалены.} many {# писем отправлено на {address} и удалено.} other {# письма отправлено на {address} и удалено.}}",
+    "not_deleted": "{count, plural, =1 {Отправлено на {address}, но письмо не удалось удалить.} one {Отправлено на {address}, но # письмо не удалось удалить.} few {Отправлено на {address}, но # письма не удалось удалить.} many {Отправлено на {address}, но # писем не удалось удалить.} other {Отправлено на {address}, но # письма не удалось удалить.}}",
+    "failed": "{count, plural, =1 {Не удалось отправить отчёт о письме, поэтому оно не удалено.} one {Не удалось отправить отчёт о # письме, поэтому оно не удалено.} few {Не удалось отправить отчёты о # письмах, поэтому они не удалены.} many {Не удалось отправить отчёты о # письмах, поэтому они не удалены.} other {Не удалось отправить отчёты о # письмах, поэтому они не удалены.}}",
+    "no_subject": "(без темы)"
   },
   "phishing_report": {
     "action": "Сообщить о фишинге…",
@@ -2069,8 +2069,8 @@
         "description": "Спрашивать перед перемещением нескольких выбранных писем в корзину. При безвозвратном удалении подтверждение запрашивается всегда."
       },
       "confirm_spam_report": {
-        "label": "Ask before reporting spam",
-        "description": "Mark as spam sends the message to {address} and deletes it. Turn this on to be asked first each time."
+        "label": "Спрашивать перед отправкой отчёта о спаме",
+        "description": "«Отметить как спам» отправляет письмо на {address} и удаляет его. Включите, чтобы каждый раз сначала появлялся вопрос."
       },
       "mail_layout": {
         "label": "Макет почты",

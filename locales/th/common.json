@@ -2219,16 +2219,16 @@
     "back": "ย้อนกลับ"
   },
   "spam_report": {
-    "confirm_title": "Report spam?",
-    "confirm_message": "{count, plural, one {The message goes to {address} as a spam report and is then deleted.} other {Each of the # messages goes to {address} as its own spam report and is then deleted.}}",
-    "dont_ask": "Don't ask again",
-    "confirm": "Report and delete",
-    "cancel": "Cancel",
-    "sending": "Reporting…",
-    "done": "{count, plural, one {Reported to {address} and deleted.} other {# messages reported to {address} and deleted.}}",
-    "not_deleted": "{count, plural, one {Reported to {address}, but the message couldn't be deleted.} other {Reported to {address}, but # messages couldn't be deleted.}}",
-    "failed": "{count, plural, one {The message couldn't be reported, so it wasn't deleted.} other {# messages couldn't be reported, so they weren't deleted.}}",
-    "no_subject": "(no subject)"
+    "confirm_title": "รายงานเป็นจดหมายขยะหรือไม่",
+    "confirm_message": "{count, plural, =1 {ข้อความจะถูกส่งไปยัง {address} เป็นรายงานจดหมายขยะ แล้วจึงถูกลบ} other {ข้อความทั้ง # ฉบับจะถูกส่งไปยัง {address} เป็นรายงานจดหมายขยะแยกกัน แล้วจึงถูกลบ}}",
+    "dont_ask": "ไม่ต้องถามอีก",
+    "confirm": "รายงานและลบ",
+    "cancel": "ยกเลิก",
+    "sending": "กำลังรายงาน…",
+    "done": "{count, plural, =1 {รายงานไปยัง {address} และลบแล้ว} other {รายงานข้อความ # ฉบับไปยัง {address} และลบแล้ว}}",
+    "not_deleted": "{count, plural, =1 {รายงานไปยัง {address} แล้ว แต่ไม่สามารถลบข้อความได้} other {รายงานไปยัง {address} แล้ว แต่ไม่สามารถลบข้อความ # ฉบับได้}}",
+    "failed": "{count, plural, =1 {ไม่สามารถรายงานข้อความได้ จึงไม่ได้ลบ} other {ไม่สามารถรายงานข้อความ # ฉบับได้ จึงไม่ได้ลบ}}",
+    "no_subject": "(ไม่มีเรื่อง)"
   },
   "phishing_report": {
     "action": "รายงานฟิชชิง…",
@@ -5314,8 +5314,8 @@
         "description": "ถามเพื่อยืนยันก่อนย้ายข้อความที่เลือกหลายฉบับไปยังถังขยะ การลบอย่างถาวรจะถามเพื่อยืนยันเสมอ"
       },
       "confirm_spam_report": {
-        "label": "Ask before reporting spam",
-        "description": "Mark as spam sends the message to {address} and deletes it. Turn this on to be asked first each time."
+        "label": "ถามก่อนรายงานจดหมายขยะ",
+        "description": "“รายงานเป็นจดหมายขยะ” จะส่งข้อความไปยัง {address} แล้วลบทิ้ง เปิดตัวเลือกนี้เพื่อให้ถามก่อนทุกครั้ง"
       },
       "mail_layout": {
         "label": "เค้าโครงอีเมล",

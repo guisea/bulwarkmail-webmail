@@ -976,16 +976,16 @@
     "back": "Voltar"
   },
   "spam_report": {
-    "confirm_title": "Report spam?",
-    "confirm_message": "{count, plural, one {The message goes to {address} as a spam report and is then deleted.} other {Each of the # messages goes to {address} as its own spam report and is then deleted.}}",
-    "dont_ask": "Don't ask again",
-    "confirm": "Report and delete",
-    "cancel": "Cancel",
-    "sending": "Reporting…",
-    "done": "{count, plural, one {Reported to {address} and deleted.} other {# messages reported to {address} and deleted.}}",
-    "not_deleted": "{count, plural, one {Reported to {address}, but the message couldn't be deleted.} other {Reported to {address}, but # messages couldn't be deleted.}}",
-    "failed": "{count, plural, one {The message couldn't be reported, so it wasn't deleted.} other {# messages couldn't be reported, so they weren't deleted.}}",
-    "no_subject": "(no subject)"
+    "confirm_title": "Reportar como spam?",
+    "confirm_message": "{count, plural, one {A mensagem é enviada para {address} como denúncia de spam e depois excluída.} other {Cada uma das # mensagens é enviada para {address} como denúncia de spam separada e depois excluída.}}",
+    "dont_ask": "Não perguntar novamente",
+    "confirm": "Reportar e excluir",
+    "cancel": "Cancelar",
+    "sending": "Reportando…",
+    "done": "{count, plural, one {Reportada para {address} e excluída.} other {# mensagens reportadas para {address} e excluídas.}}",
+    "not_deleted": "{count, plural, one {Reportada para {address}, mas não foi possível excluir a mensagem.} other {Reportadas para {address}, mas não foi possível excluir # mensagens.}}",
+    "failed": "{count, plural, one {Não foi possível reportar a mensagem, por isso ela não foi excluída.} other {Não foi possível reportar # mensagens, por isso elas não foram excluídas.}}",
+    "no_subject": "(sem assunto)"
   },
   "phishing_report": {
     "action": "Reportar phishing…",
@@ -2069,8 +2069,8 @@
         "description": "Perguntar antes de mover várias mensagens selecionadas para o lixo. A eliminação permanente pergunta sempre."
       },
       "confirm_spam_report": {
-        "label": "Ask before reporting spam",
-        "description": "Mark as spam sends the message to {address} and deletes it. Turn this on to be asked first each time."
+        "label": "Perguntar antes de reportar spam",
+        "description": "\"Reportar spam\" envia a mensagem para {address} e a exclui. Ative para que seja pedida confirmação todas as vezes."
       },
       "mail_layout": {
         "label": "Layout do e-mail",

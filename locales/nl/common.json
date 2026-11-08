@@ -976,16 +976,16 @@
     "back": "Terug"
   },
   "spam_report": {
-    "confirm_title": "Report spam?",
-    "confirm_message": "{count, plural, one {The message goes to {address} as a spam report and is then deleted.} other {Each of the # messages goes to {address} as its own spam report and is then deleted.}}",
-    "dont_ask": "Don't ask again",
-    "confirm": "Report and delete",
-    "cancel": "Cancel",
-    "sending": "Reporting…",
-    "done": "{count, plural, one {Reported to {address} and deleted.} other {# messages reported to {address} and deleted.}}",
-    "not_deleted": "{count, plural, one {Reported to {address}, but the message couldn't be deleted.} other {Reported to {address}, but # messages couldn't be deleted.}}",
-    "failed": "{count, plural, one {The message couldn't be reported, so it wasn't deleted.} other {# messages couldn't be reported, so they weren't deleted.}}",
-    "no_subject": "(no subject)"
+    "confirm_title": "Spam melden?",
+    "confirm_message": "{count, plural, one {Het bericht gaat als spammelding naar {address} en wordt daarna verwijderd.} other {Elk van de # berichten gaat als eigen spammelding naar {address} en wordt daarna verwijderd.}}",
+    "dont_ask": "Niet meer vragen",
+    "confirm": "Melden en verwijderen",
+    "cancel": "Annuleren",
+    "sending": "Bezig met melden…",
+    "done": "{count, plural, one {Gemeld bij {address} en verwijderd.} other {# berichten gemeld bij {address} en verwijderd.}}",
+    "not_deleted": "{count, plural, one {Gemeld bij {address}, maar het bericht kon niet worden verwijderd.} other {Gemeld bij {address}, maar # berichten konden niet worden verwijderd.}}",
+    "failed": "{count, plural, one {Het bericht kon niet worden gemeld en is dus niet verwijderd.} other {# berichten konden niet worden gemeld en zijn dus niet verwijderd.}}",
+    "no_subject": "(geen onderwerp)"
   },
   "phishing_report": {
     "action": "Phishing melden…",
@@ -2069,8 +2069,8 @@
         "description": "Vragen voordat meerdere geselecteerde berichten naar de prullenbak gaan. Definitief verwijderen vraagt altijd."
       },
       "confirm_spam_report": {
-        "label": "Ask before reporting spam",
-        "description": "Mark as spam sends the message to {address} and deletes it. Turn this on to be asked first each time."
+        "label": "Vragen voordat spam wordt gemeld",
+        "description": "'Spam melden' stuurt het bericht naar {address} en verwijdert het. Zet dit aan om elke keer eerst te worden gevraagd."
       },
       "mail_layout": {
         "label": "E-mailindeling",

@@ -976,16 +976,16 @@
     "back": "Tilbage"
   },
   "spam_report": {
-    "confirm_title": "Report spam?",
-    "confirm_message": "{count, plural, one {The message goes to {address} as a spam report and is then deleted.} other {Each of the # messages goes to {address} as its own spam report and is then deleted.}}",
-    "dont_ask": "Don't ask again",
-    "confirm": "Report and delete",
-    "cancel": "Cancel",
-    "sending": "Reporting…",
-    "done": "{count, plural, one {Reported to {address} and deleted.} other {# messages reported to {address} and deleted.}}",
-    "not_deleted": "{count, plural, one {Reported to {address}, but the message couldn't be deleted.} other {Reported to {address}, but # messages couldn't be deleted.}}",
-    "failed": "{count, plural, one {The message couldn't be reported, so it wasn't deleted.} other {# messages couldn't be reported, so they weren't deleted.}}",
-    "no_subject": "(no subject)"
+    "confirm_title": "Rapportér spam?",
+    "confirm_message": "{count, plural, one {Beskeden sendes til {address} som en spamrapport og slettes derefter.} other {Hver af de # beskeder sendes til {address} som sin egen spamrapport og slettes derefter.}}",
+    "dont_ask": "Spørg ikke igen",
+    "confirm": "Rapportér og slet",
+    "cancel": "Annuller",
+    "sending": "Rapporterer…",
+    "done": "{count, plural, one {Rapporteret til {address} og slettet.} other {# beskeder rapporteret til {address} og slettet.}}",
+    "not_deleted": "{count, plural, one {Rapporteret til {address}, men beskeden kunne ikke slettes.} other {Rapporteret til {address}, men # beskeder kunne ikke slettes.}}",
+    "failed": "{count, plural, one {Beskeden kunne ikke rapporteres, så den blev ikke slettet.} other {# beskeder kunne ikke rapporteres, så de blev ikke slettet.}}",
+    "no_subject": "(intet emne)"
   },
   "phishing_report": {
     "action": "Rapportér phishing…",
@@ -2072,8 +2072,8 @@
         "description": "Spørg før flere valgte beskeder flyttes til papirkurven. Permanent sletning spørger altid."
       },
       "confirm_spam_report": {
-        "label": "Ask before reporting spam",
-        "description": "Mark as spam sends the message to {address} and deletes it. Turn this on to be asked first each time."
+        "label": "Spørg før spam rapporteres",
+        "description": "\"Rapportér spam\" sender beskeden til {address} og sletter den. Slå dette til for at blive spurgt først hver gang."
       },
       "mail_layout": {
         "label": "Mail-layout",

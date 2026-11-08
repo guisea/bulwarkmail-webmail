@@ -976,16 +976,16 @@
     "back": "Zpět"
   },
   "spam_report": {
-    "confirm_title": "Report spam?",
-    "confirm_message": "{count, plural, one {The message goes to {address} as a spam report and is then deleted.} other {Each of the # messages goes to {address} as its own spam report and is then deleted.}}",
-    "dont_ask": "Don't ask again",
-    "confirm": "Report and delete",
-    "cancel": "Cancel",
-    "sending": "Reporting…",
-    "done": "{count, plural, one {Reported to {address} and deleted.} other {# messages reported to {address} and deleted.}}",
-    "not_deleted": "{count, plural, one {Reported to {address}, but the message couldn't be deleted.} other {Reported to {address}, but # messages couldn't be deleted.}}",
-    "failed": "{count, plural, one {The message couldn't be reported, so it wasn't deleted.} other {# messages couldn't be reported, so they weren't deleted.}}",
-    "no_subject": "(no subject)"
+    "confirm_title": "Nahlásit spam?",
+    "confirm_message": "{count, plural, one {Zpráva bude odeslána na {address} jako hlášení spamu a poté smazána.} few {# zprávy budou odeslány na {address}, každá jako samostatné hlášení spamu, a poté smazány.} many {# zprávy bude odesláno na {address}, každá jako samostatné hlášení spamu, a poté smazáno.} other {# zpráv bude odesláno na {address}, každá jako samostatné hlášení spamu, a poté smazáno.}}",
+    "dont_ask": "Příště se neptat",
+    "confirm": "Nahlásit a smazat",
+    "cancel": "Zrušit",
+    "sending": "Nahlašování…",
+    "done": "{count, plural, one {Nahlášeno na {address} a smazáno.} few {# zprávy nahlášeny na {address} a smazány.} many {# zprávy nahlášeno na {address} a smazáno.} other {# zpráv nahlášeno na {address} a smazáno.}}",
+    "not_deleted": "{count, plural, one {Nahlášeno na {address}, ale zprávu nebylo možné smazat.} few {Nahlášeno na {address}, ale # zprávy nebylo možné smazat.} many {Nahlášeno na {address}, ale # zprávy nebylo možné smazat.} other {Nahlášeno na {address}, ale # zpráv nebylo možné smazat.}}",
+    "failed": "{count, plural, one {Zprávu nebylo možné nahlásit, takže nebyla smazána.} few {# zprávy nebylo možné nahlásit, takže nebyly smazány.} many {# zprávy nebylo možné nahlásit, takže nebyly smazány.} other {# zpráv nebylo možné nahlásit, takže nebyly smazány.}}",
+    "no_subject": "(bez předmětu)"
   },
   "phishing_report": {
     "action": "Nahlásit phishing…",
@@ -2069,8 +2069,8 @@
         "description": "Zeptat se před přesunem více vybraných zpráv do koše. Trvalé smazání se ptá vždy."
       },
       "confirm_spam_report": {
-        "label": "Ask before reporting spam",
-        "description": "Mark as spam sends the message to {address} and deletes it. Turn this on to be asked first each time."
+        "label": "Před nahlášením spamu se zeptat",
+        "description": "„Nahlásit spam“ odešle zprávu na {address} a smaže ji. Zapněte, pokud se má aplikace pokaždé nejdřív zeptat."
       },
       "mail_layout": {
         "label": "Rozložení pošty",

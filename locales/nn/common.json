@@ -975,6 +975,18 @@
     "send_anyway": "Send likevel",
     "back": "Tilbake"
   },
+  "spam_report": {
+    "confirm_title": "Rapportere søppelpost?",
+    "confirm_message": "{count, plural, one {Meldinga blir send til {address} som ein søppelpostrapport og deretter sletta.} other {Kvar av dei # meldingane blir send til {address} som ein eigen søppelpostrapport og deretter sletta.}}",
+    "dont_ask": "Ikkje spør igjen",
+    "confirm": "Rapporter og slett",
+    "cancel": "Avbryt",
+    "sending": "Rapporterer …",
+    "done": "{count, plural, one {Rapportert til {address} og sletta.} other {# meldingar rapporterte til {address} og sletta.}}",
+    "not_deleted": "{count, plural, one {Rapportert til {address}, men meldinga kunne ikkje slettast.} other {Rapportert til {address}, men # meldingar kunne ikkje slettast.}}",
+    "failed": "{count, plural, one {Meldinga kunne ikkje rapporterast, så ho vart ikkje sletta.} other {# meldingar kunne ikkje rapporterast, så dei vart ikkje sletta.}}",
+    "no_subject": "(ingen emne)"
+  },
   "phishing_report": {
     "action": "Rapporter phishing …",
     "confirm_title": "Rapportere phishing?",
@@ -2068,8 +2080,8 @@
         "description": "Spør før fleire valde meldingar vert flytta til papirkorga. Permanent sletting spør alltid."
       },
       "confirm_spam_report": {
-        "label": "Ask before reporting spam",
-        "description": "Mark as spam sends the message to {address} and deletes it. Turn this on to be asked first each time."
+        "label": "Spør før søppelpost blir rapportert",
+        "description": "«Rapporter søppelpost» sender meldinga til {address} og slettar ho. Slå på for å bli spurd først kvar gong."
       },
       "mail_layout": {
         "label": "E-postoppsett",

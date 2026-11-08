@@ -976,16 +976,16 @@
     "back": "Indietro"
   },
   "spam_report": {
-    "confirm_title": "Report spam?",
-    "confirm_message": "{count, plural, one {The message goes to {address} as a spam report and is then deleted.} other {Each of the # messages goes to {address} as its own spam report and is then deleted.}}",
-    "dont_ask": "Don't ask again",
-    "confirm": "Report and delete",
-    "cancel": "Cancel",
-    "sending": "Reporting…",
-    "done": "{count, plural, one {Reported to {address} and deleted.} other {# messages reported to {address} and deleted.}}",
-    "not_deleted": "{count, plural, one {Reported to {address}, but the message couldn't be deleted.} other {Reported to {address}, but # messages couldn't be deleted.}}",
-    "failed": "{count, plural, one {The message couldn't be reported, so it wasn't deleted.} other {# messages couldn't be reported, so they weren't deleted.}}",
-    "no_subject": "(no subject)"
+    "confirm_title": "Segnalare come spam?",
+    "confirm_message": "{count, plural, one {Il messaggio viene inviato a {address} come segnalazione di spam e poi eliminato.} other {Ciascuno dei # messaggi viene inviato a {address} come segnalazione di spam separata e poi eliminato.}}",
+    "dont_ask": "Non chiedere più",
+    "confirm": "Segnala ed elimina",
+    "cancel": "Annulla",
+    "sending": "Segnalazione in corso…",
+    "done": "{count, plural, one {Segnalato a {address} ed eliminato.} other {# messaggi segnalati a {address} ed eliminati.}}",
+    "not_deleted": "{count, plural, one {Segnalato a {address}, ma non è stato possibile eliminare il messaggio.} other {Segnalato a {address}, ma non è stato possibile eliminare # messaggi.}}",
+    "failed": "{count, plural, one {Non è stato possibile segnalare il messaggio, quindi non è stato eliminato.} other {Non è stato possibile segnalare # messaggi, quindi non sono stati eliminati.}}",
+    "no_subject": "(nessun oggetto)"
   },
   "phishing_report": {
     "action": "Segnala come phishing…",
@@ -2069,8 +2069,8 @@
         "description": "Chiedi prima di spostare più messaggi selezionati nel cestino. L'eliminazione definitiva chiede sempre."
       },
       "confirm_spam_report": {
-        "label": "Ask before reporting spam",
-        "description": "Mark as spam sends the message to {address} and deletes it. Turn this on to be asked first each time."
+        "label": "Chiedi prima di segnalare spam",
+        "description": "«Segnala come spam» invia il messaggio a {address} e lo elimina. Attiva questa opzione per ricevere ogni volta una richiesta di conferma."
       },
       "mail_layout": {
         "label": "Layout della posta",

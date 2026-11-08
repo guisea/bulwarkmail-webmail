@@ -976,16 +976,16 @@
     "back": "رجوع"
   },
   "spam_report": {
-    "confirm_title": "Report spam?",
-    "confirm_message": "{count, plural, one {The message goes to {address} as a spam report and is then deleted.} other {Each of the # messages goes to {address} as its own spam report and is then deleted.}}",
-    "dont_ask": "Don't ask again",
-    "confirm": "Report and delete",
-    "cancel": "Cancel",
-    "sending": "Reporting…",
-    "done": "{count, plural, one {Reported to {address} and deleted.} other {# messages reported to {address} and deleted.}}",
-    "not_deleted": "{count, plural, one {Reported to {address}, but the message couldn't be deleted.} other {Reported to {address}, but # messages couldn't be deleted.}}",
-    "failed": "{count, plural, one {The message couldn't be reported, so it wasn't deleted.} other {# messages couldn't be reported, so they weren't deleted.}}",
-    "no_subject": "(no subject)"
+    "confirm_title": "الإبلاغ عن بريد مزعج؟",
+    "confirm_message": "{count, plural, zero {لا توجد رسائل لإرسالها إلى {address}.} one {ستُرسل الرسالة إلى {address} كبلاغ عن بريد مزعج ثم تُحذف.} two {ستُرسل كل من الرسالتين إلى {address} كبلاغ مستقل عن بريد مزعج ثم تُحذف.} few {ستُرسل كل رسالة من # رسائل إلى {address} كبلاغ مستقل عن بريد مزعج ثم تُحذف.} many {ستُرسل كل رسالة من # رسالة إلى {address} كبلاغ مستقل عن بريد مزعج ثم تُحذف.} other {ستُرسل كل رسالة من # رسالة إلى {address} كبلاغ مستقل عن بريد مزعج ثم تُحذف.}}",
+    "dont_ask": "لا تسألني مرة أخرى",
+    "confirm": "إبلاغ وحذف",
+    "cancel": "إلغاء",
+    "sending": "جارٍ الإبلاغ…",
+    "done": "{count, plural, zero {لم يُبلَّغ عن أي رسالة.} one {تم الإبلاغ إلى {address} وحُذفت الرسالة.} two {تم إبلاغ {address} عن رسالتين وحُذفتا.} few {تم إبلاغ {address} عن # رسائل وحُذفت.} many {تم إبلاغ {address} عن # رسالة وحُذفت.} other {تم إبلاغ {address} عن # رسالة وحُذفت.}}",
+    "not_deleted": "{count, plural, zero {تم الإبلاغ إلى {address}.} one {تم الإبلاغ إلى {address}، لكن تعذّر حذف الرسالة.} two {تم الإبلاغ إلى {address}، لكن تعذّر حذف رسالتين.} few {تم الإبلاغ إلى {address}، لكن تعذّر حذف # رسائل.} many {تم الإبلاغ إلى {address}، لكن تعذّر حذف # رسالة.} other {تم الإبلاغ إلى {address}، لكن تعذّر حذف # رسالة.}}",
+    "failed": "{count, plural, zero {لم يتعذّر الإبلاغ عن أي رسالة.} one {تعذّر الإبلاغ عن الرسالة، لذا لم تُحذف.} two {تعذّر الإبلاغ عن رسالتين، لذا لم تُحذفا.} few {تعذّر الإبلاغ عن # رسائل، لذا لم تُحذف.} many {تعذّر الإبلاغ عن # رسالة، لذا لم تُحذف.} other {تعذّر الإبلاغ عن # رسالة، لذا لم تُحذف.}}",
+    "no_subject": "(بلا موضوع)"
   },
   "phishing_report": {
     "action": "الإبلاغ عن تصيّد احتيالي…",
@@ -2072,8 +2072,8 @@
         "description": "السؤال قبل نقل عدة رسائل محددة إلى سلة المهملات. الحذف النهائي يطلب التأكيد دائمًا."
       },
       "confirm_spam_report": {
-        "label": "Ask before reporting spam",
-        "description": "Mark as spam sends the message to {address} and deletes it. Turn this on to be asked first each time."
+        "label": "السؤال قبل الإبلاغ عن البريد المزعج",
+        "description": "يؤدي «الإبلاغ عن بريد مزعج» إلى إرسال الرسالة إلى {address} وحذفها. فعّل هذا الخيار ليُطلب منك التأكيد في كل مرة."
       },
       "mail_layout": {
         "label": "تخطيط البريد",

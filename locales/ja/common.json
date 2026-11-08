@@ -976,16 +976,16 @@
     "back": "戻る"
   },
   "spam_report": {
-    "confirm_title": "Report spam?",
-    "confirm_message": "{count, plural, one {The message goes to {address} as a spam report and is then deleted.} other {Each of the # messages goes to {address} as its own spam report and is then deleted.}}",
-    "dont_ask": "Don't ask again",
-    "confirm": "Report and delete",
-    "cancel": "Cancel",
-    "sending": "Reporting…",
-    "done": "{count, plural, one {Reported to {address} and deleted.} other {# messages reported to {address} and deleted.}}",
-    "not_deleted": "{count, plural, one {Reported to {address}, but the message couldn't be deleted.} other {Reported to {address}, but # messages couldn't be deleted.}}",
-    "failed": "{count, plural, one {The message couldn't be reported, so it wasn't deleted.} other {# messages couldn't be reported, so they weren't deleted.}}",
-    "no_subject": "(no subject)"
+    "confirm_title": "迷惑メールとして報告しますか？",
+    "confirm_message": "{count, plural, =1 {メールを迷惑メールの報告として {address} に送信し、その後削除します。} other {# 件のメールをそれぞれ個別の迷惑メール報告として {address} に送信し、その後削除します。}}",
+    "dont_ask": "今後は確認しない",
+    "confirm": "報告して削除",
+    "cancel": "キャンセル",
+    "sending": "報告中…",
+    "done": "{count, plural, =1 {{address} に報告し、削除しました。} other {# 件のメールを {address} に報告し、削除しました。}}",
+    "not_deleted": "{count, plural, =1 {{address} に報告しましたが、メールを削除できませんでした。} other {{address} に報告しましたが、# 件のメールを削除できませんでした。}}",
+    "failed": "{count, plural, =1 {メールを報告できなかったため、削除していません。} other {# 件のメールを報告できなかったため、削除していません。}}",
+    "no_subject": "(件名なし)"
   },
   "phishing_report": {
     "action": "フィッシングを報告…",
@@ -2069,8 +2069,8 @@
         "description": "選択した複数のメッセージをゴミ箱に移動する前に確認します。完全に削除する場合は常に確認します。"
       },
       "confirm_spam_report": {
-        "label": "Ask before reporting spam",
-        "description": "Mark as spam sends the message to {address} and deletes it. Turn this on to be asked first each time."
+        "label": "迷惑メールを報告する前に確認する",
+        "description": "「迷惑メールを報告」を選ぶと、メールを {address} に送信して削除します。毎回確認するにはオンにしてください。"
       },
       "mail_layout": {
         "label": "メールレイアウト",

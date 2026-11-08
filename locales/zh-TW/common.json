@@ -976,16 +976,16 @@
     "back": "返回"
   },
   "spam_report": {
-    "confirm_title": "Report spam?",
-    "confirm_message": "{count, plural, one {The message goes to {address} as a spam report and is then deleted.} other {Each of the # messages goes to {address} as its own spam report and is then deleted.}}",
-    "dont_ask": "Don't ask again",
-    "confirm": "Report and delete",
-    "cancel": "Cancel",
-    "sending": "Reporting…",
-    "done": "{count, plural, one {Reported to {address} and deleted.} other {# messages reported to {address} and deleted.}}",
-    "not_deleted": "{count, plural, one {Reported to {address}, but the message couldn't be deleted.} other {Reported to {address}, but # messages couldn't be deleted.}}",
-    "failed": "{count, plural, one {The message couldn't be reported, so it wasn't deleted.} other {# messages couldn't be reported, so they weren't deleted.}}",
-    "no_subject": "(no subject)"
+    "confirm_title": "回報垃圾郵件？",
+    "confirm_message": "{count, plural, =1 {這封郵件會以垃圾郵件回報的形式寄到 {address}，然後刪除。} other {這 # 封郵件會分別以獨立的垃圾郵件回報寄到 {address}，然後刪除。}}",
+    "dont_ask": "不再詢問",
+    "confirm": "回報並刪除",
+    "cancel": "取消",
+    "sending": "正在回報…",
+    "done": "{count, plural, =1 {已回報至 {address} 並刪除。} other {已將 # 封郵件回報至 {address} 並刪除。}}",
+    "not_deleted": "{count, plural, =1 {已回報至 {address}，但無法刪除這封郵件。} other {已回報至 {address}，但無法刪除 # 封郵件。}}",
+    "failed": "{count, plural, =1 {無法回報這封郵件，因此沒有刪除。} other {無法回報 # 封郵件，因此沒有刪除。}}",
+    "no_subject": "（無主題）"
   },
   "phishing_report": {
     "action": "回報網路釣魚…",
@@ -2072,8 +2072,8 @@
         "description": "將多封選取的郵件移至垃圾桶前詢問。永久刪除一律會詢問。"
       },
       "confirm_spam_report": {
-        "label": "Ask before reporting spam",
-        "description": "Mark as spam sends the message to {address} and deletes it. Turn this on to be asked first each time."
+        "label": "回報垃圾郵件前先詢問",
+        "description": "「回報垃圾郵件」會將郵件寄到 {address} 並刪除。開啟後每次都會先詢問。"
       },
       "mail_layout": {
         "label": "郵件版面配置",

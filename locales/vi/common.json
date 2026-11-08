@@ -976,16 +976,16 @@
     "back": "Quay lại"
   },
   "spam_report": {
-    "confirm_title": "Report spam?",
-    "confirm_message": "{count, plural, one {The message goes to {address} as a spam report and is then deleted.} other {Each of the # messages goes to {address} as its own spam report and is then deleted.}}",
-    "dont_ask": "Don't ask again",
-    "confirm": "Report and delete",
-    "cancel": "Cancel",
-    "sending": "Reporting…",
-    "done": "{count, plural, one {Reported to {address} and deleted.} other {# messages reported to {address} and deleted.}}",
-    "not_deleted": "{count, plural, one {Reported to {address}, but the message couldn't be deleted.} other {Reported to {address}, but # messages couldn't be deleted.}}",
-    "failed": "{count, plural, one {The message couldn't be reported, so it wasn't deleted.} other {# messages couldn't be reported, so they weren't deleted.}}",
-    "no_subject": "(no subject)"
+    "confirm_title": "Báo cáo thư rác?",
+    "confirm_message": "{count, plural, =1 {Thư sẽ được gửi đến {address} dưới dạng báo cáo thư rác rồi bị xóa.} other {Mỗi thư trong # thư sẽ được gửi đến {address} dưới dạng một báo cáo thư rác riêng rồi bị xóa.}}",
+    "dont_ask": "Không hỏi lại",
+    "confirm": "Báo cáo và xóa",
+    "cancel": "Hủy",
+    "sending": "Đang báo cáo…",
+    "done": "{count, plural, =1 {Đã báo cáo đến {address} và đã xóa.} other {Đã báo cáo # thư đến {address} và đã xóa.}}",
+    "not_deleted": "{count, plural, =1 {Đã báo cáo đến {address}, nhưng không thể xóa thư.} other {Đã báo cáo đến {address}, nhưng không thể xóa # thư.}}",
+    "failed": "{count, plural, =1 {Không thể báo cáo thư nên thư chưa bị xóa.} other {Không thể báo cáo # thư nên các thư này chưa bị xóa.}}",
+    "no_subject": "(không có tiêu đề)"
   },
   "phishing_report": {
     "action": "Báo cáo lừa đảo…",
@@ -2084,8 +2084,8 @@
         "description": "Hỏi trước khi chuyển nhiều thư đã chọn vào Thùng rác. Luôn hỏi trước khi xóa vĩnh viễn."
       },
       "confirm_spam_report": {
-        "label": "Ask before reporting spam",
-        "description": "Mark as spam sends the message to {address} and deletes it. Turn this on to be asked first each time."
+        "label": "Hỏi trước khi báo cáo thư rác",
+        "description": "“Báo cáo thư rác” sẽ gửi thư đến {address} và xóa thư. Bật để luôn được hỏi trước mỗi lần."
       },
       "mail_layout": {
         "label": "Bố cục thư",

@@ -976,16 +976,16 @@
     "back": "Enrere"
   },
   "spam_report": {
-    "confirm_title": "Report spam?",
-    "confirm_message": "{count, plural, one {The message goes to {address} as a spam report and is then deleted.} other {Each of the # messages goes to {address} as its own spam report and is then deleted.}}",
-    "dont_ask": "Don't ask again",
-    "confirm": "Report and delete",
-    "cancel": "Cancel",
-    "sending": "Reporting…",
-    "done": "{count, plural, one {Reported to {address} and deleted.} other {# messages reported to {address} and deleted.}}",
-    "not_deleted": "{count, plural, one {Reported to {address}, but the message couldn't be deleted.} other {Reported to {address}, but # messages couldn't be deleted.}}",
-    "failed": "{count, plural, one {The message couldn't be reported, so it wasn't deleted.} other {# messages couldn't be reported, so they weren't deleted.}}",
-    "no_subject": "(no subject)"
+    "confirm_title": "Denunciar com a brossa?",
+    "confirm_message": "{count, plural, one {El missatge s'envia a {address} com a denúncia de correu brossa i després s'elimina.} other {Cadascun dels # missatges s'envia a {address} com a denúncia de brossa independent i després s'elimina.}}",
+    "dont_ask": "No ho tornis a preguntar",
+    "confirm": "Denuncia i elimina",
+    "cancel": "Cancel·la",
+    "sending": "S'està denunciant…",
+    "done": "{count, plural, one {Denunciat a {address} i eliminat.} other {# missatges denunciats a {address} i eliminats.}}",
+    "not_deleted": "{count, plural, one {Denunciat a {address}, però no s'ha pogut eliminar el missatge.} other {Denunciat a {address}, però no s'han pogut eliminar # missatges.}}",
+    "failed": "{count, plural, one {No s'ha pogut denunciar el missatge, així que no s'ha eliminat.} other {No s'han pogut denunciar # missatges, així que no s'han eliminat.}}",
+    "no_subject": "(sense assumpte)"
   },
   "phishing_report": {
     "action": "Denuncia com a pesca de credencials…",
@@ -2072,8 +2072,8 @@
         "description": "Pregunta abans de moure diversos missatges seleccionats a la paperera. L'eliminació definitiva sempre demana confirmació."
       },
       "confirm_spam_report": {
-        "label": "Ask before reporting spam",
-        "description": "Mark as spam sends the message to {address} and deletes it. Turn this on to be asked first each time."
+        "label": "Pregunta abans de denunciar correu brossa",
+        "description": "«Denuncia com a brossa» envia el missatge a {address} i l'elimina. Activeu-ho perquè es demani confirmació cada vegada."
       },
       "mail_layout": {
         "label": "Disposició del correu",

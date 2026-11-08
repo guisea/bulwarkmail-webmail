@@ -976,16 +976,16 @@
     "back": "Atpakaļ"
   },
   "spam_report": {
-    "confirm_title": "Report spam?",
-    "confirm_message": "{count, plural, one {The message goes to {address} as a spam report and is then deleted.} other {Each of the # messages goes to {address} as its own spam report and is then deleted.}}",
-    "dont_ask": "Don't ask again",
-    "confirm": "Report and delete",
-    "cancel": "Cancel",
-    "sending": "Reporting…",
-    "done": "{count, plural, one {Reported to {address} and deleted.} other {# messages reported to {address} and deleted.}}",
-    "not_deleted": "{count, plural, one {Reported to {address}, but the message couldn't be deleted.} other {Reported to {address}, but # messages couldn't be deleted.}}",
-    "failed": "{count, plural, one {The message couldn't be reported, so it wasn't deleted.} other {# messages couldn't be reported, so they weren't deleted.}}",
-    "no_subject": "(no subject)"
+    "confirm_title": "Ziņot par mēstuli?",
+    "confirm_message": "{count, plural, =1 {Ziņojums tiks nosūtīts uz {address} kā ziņojums par mēstuli un pēc tam izdzēsts.} zero {# ziņojumi tiks nosūtīti uz {address}, katrs atsevišķi kā ziņojums par mēstuli, un pēc tam izdzēsti.} one {# ziņojums tiks nosūtīts uz {address}, katrs atsevišķi kā ziņojums par mēstuli, un pēc tam izdzēsts.} other {# ziņojumi tiks nosūtīti uz {address}, katrs atsevišķi kā ziņojums par mēstuli, un pēc tam izdzēsti.}}",
+    "dont_ask": "Vairs nejautāt",
+    "confirm": "Ziņot un dzēst",
+    "cancel": "Atcelt",
+    "sending": "Notiek ziņošana…",
+    "done": "{count, plural, =1 {Paziņots uz {address} un izdzēsts.} zero {# ziņojumi paziņoti uz {address} un izdzēsti.} one {# ziņojums paziņots uz {address} un izdzēsts.} other {# ziņojumi paziņoti uz {address} un izdzēsti.}}",
+    "not_deleted": "{count, plural, =1 {Paziņots uz {address}, taču ziņojumu nevarēja izdzēst.} zero {Paziņots uz {address}, taču # ziņojumus nevarēja izdzēst.} one {Paziņots uz {address}, taču # ziņojumu nevarēja izdzēst.} other {Paziņots uz {address}, taču # ziņojumus nevarēja izdzēst.}}",
+    "failed": "{count, plural, =1 {Par ziņojumu nevarēja paziņot, tāpēc tas netika izdzēsts.} zero {Par # ziņojumiem nevarēja paziņot, tāpēc tie netika izdzēsti.} one {Par # ziņojumu nevarēja paziņot, tāpēc tas netika izdzēsts.} other {Par # ziņojumiem nevarēja paziņot, tāpēc tie netika izdzēsti.}}",
+    "no_subject": "(bez temata)"
   },
   "phishing_report": {
     "action": "Ziņot par pikšķerēšanu…",
@@ -2069,8 +2069,8 @@
         "description": "Jautāt pirms vairāku atlasītu ziņojumu pārvietošanas uz miskasti. Neatgriezeniska dzēšana vienmēr jautā."
       },
       "confirm_spam_report": {
-        "label": "Ask before reporting spam",
-        "description": "Mark as spam sends the message to {address} and deletes it. Turn this on to be asked first each time."
+        "label": "Jautāt pirms ziņošanas par mēstulēm",
+        "description": "“Atzīmēt kā mēstuli” nosūta ziņojumu uz {address} un to izdzēš. Ieslēdziet, lai katru reizi vispirms tiktu jautāts."
       },
       "mail_layout": {
         "label": "Pasta izkārtojums",

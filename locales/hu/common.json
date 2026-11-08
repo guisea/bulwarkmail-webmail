@@ -976,16 +976,16 @@
     "back": "Vissza"
   },
   "spam_report": {
-    "confirm_title": "Report spam?",
-    "confirm_message": "{count, plural, one {The message goes to {address} as a spam report and is then deleted.} other {Each of the # messages goes to {address} as its own spam report and is then deleted.}}",
-    "dont_ask": "Don't ask again",
-    "confirm": "Report and delete",
-    "cancel": "Cancel",
-    "sending": "Reporting…",
-    "done": "{count, plural, one {Reported to {address} and deleted.} other {# messages reported to {address} and deleted.}}",
-    "not_deleted": "{count, plural, one {Reported to {address}, but the message couldn't be deleted.} other {Reported to {address}, but # messages couldn't be deleted.}}",
-    "failed": "{count, plural, one {The message couldn't be reported, so it wasn't deleted.} other {# messages couldn't be reported, so they weren't deleted.}}",
-    "no_subject": "(no subject)"
+    "confirm_title": "Spam jelentése?",
+    "confirm_message": "{count, plural, one {Az üzenet spamjelentésként a(z) {address} címre kerül, majd törlődik.} other {A(z) # üzenet mindegyike külön spamjelentésként a(z) {address} címre kerül, majd törlődik.}}",
+    "dont_ask": "Ne kérdezzen többet",
+    "confirm": "Jelentés és törlés",
+    "cancel": "Mégse",
+    "sending": "Jelentés folyamatban…",
+    "done": "{count, plural, one {Jelentve a(z) {address} címre és törölve.} other {# üzenet jelentve a(z) {address} címre és törölve.}}",
+    "not_deleted": "{count, plural, one {Jelentve a(z) {address} címre, de az üzenetet nem sikerült törölni.} other {Jelentve a(z) {address} címre, de # üzenetet nem sikerült törölni.}}",
+    "failed": "{count, plural, one {Az üzenetet nem sikerült jelenteni, ezért nem lett törölve.} other {# üzenetet nem sikerült jelenteni, ezért nem lettek törölve.}}",
+    "no_subject": "(nincs tárgy)"
   },
   "phishing_report": {
     "action": "Adathalászat jelentése…",
@@ -2072,8 +2072,8 @@
         "description": "Kérdezzen, mielőtt több kijelölt üzenetet a Kukába helyez. A végleges törlés mindig kérdez."
       },
       "confirm_spam_report": {
-        "label": "Ask before reporting spam",
-        "description": "Mark as spam sends the message to {address} and deletes it. Turn this on to be asked first each time."
+        "label": "Kérdezzen a spam jelentése előtt",
+        "description": "A(z) „Spam jelentése” művelet elküldi az üzenetet a(z) {address} címre, és törli. Kapcsolja be, hogy minden alkalommal először rákérdezzen."
       },
       "mail_layout": {
         "label": "Levelezés elrendezés",

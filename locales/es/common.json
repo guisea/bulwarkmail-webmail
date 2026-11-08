@@ -976,16 +976,16 @@
     "back": "Atrás"
   },
   "spam_report": {
-    "confirm_title": "Report spam?",
-    "confirm_message": "{count, plural, one {The message goes to {address} as a spam report and is then deleted.} other {Each of the # messages goes to {address} as its own spam report and is then deleted.}}",
-    "dont_ask": "Don't ask again",
-    "confirm": "Report and delete",
-    "cancel": "Cancel",
-    "sending": "Reporting…",
-    "done": "{count, plural, one {Reported to {address} and deleted.} other {# messages reported to {address} and deleted.}}",
-    "not_deleted": "{count, plural, one {Reported to {address}, but the message couldn't be deleted.} other {Reported to {address}, but # messages couldn't be deleted.}}",
-    "failed": "{count, plural, one {The message couldn't be reported, so it wasn't deleted.} other {# messages couldn't be reported, so they weren't deleted.}}",
-    "no_subject": "(no subject)"
+    "confirm_title": "¿Reportar como spam?",
+    "confirm_message": "{count, plural, one {El mensaje se envía a {address} como reporte de spam y después se elimina.} other {Cada uno de los # mensajes se envía a {address} como reporte de spam independiente y después se elimina.}}",
+    "dont_ask": "No volver a preguntar",
+    "confirm": "Reportar y eliminar",
+    "cancel": "Cancelar",
+    "sending": "Reportando…",
+    "done": "{count, plural, one {Reportado a {address} y eliminado.} other {# mensajes reportados a {address} y eliminados.}}",
+    "not_deleted": "{count, plural, one {Reportado a {address}, pero no se pudo eliminar el mensaje.} other {Reportado a {address}, pero no se pudieron eliminar # mensajes.}}",
+    "failed": "{count, plural, one {No se pudo reportar el mensaje, así que no se eliminó.} other {No se pudieron reportar # mensajes, así que no se eliminaron.}}",
+    "no_subject": "(sin asunto)"
   },
   "phishing_report": {
     "action": "Reportar phishing…",
@@ -2069,8 +2069,8 @@
         "description": "Preguntar antes de mover varios mensajes seleccionados a la papelera. La eliminación definitiva siempre pregunta."
       },
       "confirm_spam_report": {
-        "label": "Ask before reporting spam",
-        "description": "Mark as spam sends the message to {address} and deletes it. Turn this on to be asked first each time."
+        "label": "Preguntar antes de reportar spam",
+        "description": "«Reportar spam» envía el mensaje a {address} y lo elimina. Al activarlo, se pedirá confirmación cada vez."
       },
       "mail_layout": {
         "label": "Diseño del correo",

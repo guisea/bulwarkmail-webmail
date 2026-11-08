@@ -976,16 +976,16 @@
     "back": "Назад"
   },
   "spam_report": {
-    "confirm_title": "Report spam?",
-    "confirm_message": "{count, plural, one {The message goes to {address} as a spam report and is then deleted.} other {Each of the # messages goes to {address} as its own spam report and is then deleted.}}",
-    "dont_ask": "Don't ask again",
-    "confirm": "Report and delete",
-    "cancel": "Cancel",
-    "sending": "Reporting…",
-    "done": "{count, plural, one {Reported to {address} and deleted.} other {# messages reported to {address} and deleted.}}",
-    "not_deleted": "{count, plural, one {Reported to {address}, but the message couldn't be deleted.} other {Reported to {address}, but # messages couldn't be deleted.}}",
-    "failed": "{count, plural, one {The message couldn't be reported, so it wasn't deleted.} other {# messages couldn't be reported, so they weren't deleted.}}",
-    "no_subject": "(no subject)"
+    "confirm_title": "Повідомити про спам?",
+    "confirm_message": "{count, plural, =1 {Лист буде надіслано на {address} як звіт про спам, а потім видалено.} one {# лист буде надіслано на {address}, кожен окремим звітом про спам, а потім видалено.} few {# листи буде надіслано на {address}, кожен окремим звітом про спам, а потім видалено.} many {# листів буде надіслано на {address}, кожен окремим звітом про спам, а потім видалено.} other {# листа буде надіслано на {address}, кожен окремим звітом про спам, а потім видалено.}}",
+    "dont_ask": "Більше не питати",
+    "confirm": "Повідомити й видалити",
+    "cancel": "Скасувати",
+    "sending": "Надсилання звіту…",
+    "done": "{count, plural, =1 {Надіслано на {address} і видалено.} one {# лист надіслано на {address} і видалено.} few {# листи надіслано на {address} і видалено.} many {# листів надіслано на {address} і видалено.} other {# листа надіслано на {address} і видалено.}}",
+    "not_deleted": "{count, plural, =1 {Надіслано на {address}, але лист не вдалося видалити.} one {Надіслано на {address}, але # лист не вдалося видалити.} few {Надіслано на {address}, але # листи не вдалося видалити.} many {Надіслано на {address}, але # листів не вдалося видалити.} other {Надіслано на {address}, але # листа не вдалося видалити.}}",
+    "failed": "{count, plural, =1 {Не вдалося надіслати звіт про лист, тому його не видалено.} one {Не вдалося надіслати звіт про # лист, тому його не видалено.} few {Не вдалося надіслати звіти про # листи, тому їх не видалено.} many {Не вдалося надіслати звіти про # листів, тому їх не видалено.} other {Не вдалося надіслати звіти про # листа, тому їх не видалено.}}",
+    "no_subject": "(без теми)"
   },
   "phishing_report": {
     "action": "Повідомити про фішинг…",
@@ -2069,8 +2069,8 @@
         "description": "Питати перед переміщенням кількох вибраних листів до кошика. Остаточне видалення завжди питає."
       },
       "confirm_spam_report": {
-        "label": "Ask before reporting spam",
-        "description": "Mark as spam sends the message to {address} and deletes it. Turn this on to be asked first each time."
+        "label": "Питати перед повідомленням про спам",
+        "description": "«Повідомити про спам» надсилає лист на {address} і видаляє його. Увімкніть, щоб щоразу спершу з'являлося запитання."
       },
       "mail_layout": {
         "label": "Макет пошти",

@@ -976,16 +976,16 @@
     "back": "Tagasi"
   },
   "spam_report": {
-    "confirm_title": "Report spam?",
-    "confirm_message": "{count, plural, one {The message goes to {address} as a spam report and is then deleted.} other {Each of the # messages goes to {address} as its own spam report and is then deleted.}}",
-    "dont_ask": "Don't ask again",
-    "confirm": "Report and delete",
-    "cancel": "Cancel",
-    "sending": "Reporting…",
-    "done": "{count, plural, one {Reported to {address} and deleted.} other {# messages reported to {address} and deleted.}}",
-    "not_deleted": "{count, plural, one {Reported to {address}, but the message couldn't be deleted.} other {Reported to {address}, but # messages couldn't be deleted.}}",
-    "failed": "{count, plural, one {The message couldn't be reported, so it wasn't deleted.} other {# messages couldn't be reported, so they weren't deleted.}}",
-    "no_subject": "(no subject)"
+    "confirm_title": "Kas teatada rämpspostist?",
+    "confirm_message": "{count, plural, one {Kiri saadetakse rämpsposti teatena aadressile {address} ja seejärel kustutatakse.} other {Kõik # kirja saadetakse eraldi rämpsposti teatena aadressile {address} ja seejärel kustutatakse.}}",
+    "dont_ask": "Ära enam küsi",
+    "confirm": "Teata ja kustuta",
+    "cancel": "Tühista",
+    "sending": "Teatamine…",
+    "done": "{count, plural, one {Teatatud aadressile {address} ja kustutatud.} other {# kirja teatatud aadressile {address} ja kustutatud.}}",
+    "not_deleted": "{count, plural, one {Teatatud aadressile {address}, kuid kirja ei õnnestunud kustutada.} other {Teatatud aadressile {address}, kuid # kirja ei õnnestunud kustutada.}}",
+    "failed": "{count, plural, one {Kirjast ei õnnestunud teatada, seega seda ei kustutatud.} other {# kirjast ei õnnestunud teatada, seega neid ei kustutatud.}}",
+    "no_subject": "(teema puudub)"
   },
   "phishing_report": {
     "action": "Teata õngitsusest…",
@@ -2072,8 +2072,8 @@
         "description": "Küsi enne mitme valitud kirja prügikasti teisaldamist. Lõplik kustutamine küsib alati."
       },
       "confirm_spam_report": {
-        "label": "Ask before reporting spam",
-        "description": "Mark as spam sends the message to {address} and deletes it. Turn this on to be asked first each time."
+        "label": "Küsi enne rämpspostist teatamist",
+        "description": "„Märgi rämpspostiks“ saadab kirja aadressile {address} ja kustutab selle. Lülita sisse, et iga kord enne küsitaks."
       },
       "mail_layout": {
         "label": "Kirjade paigutus",

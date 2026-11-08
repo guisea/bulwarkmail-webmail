@@ -976,16 +976,16 @@
     "back": "بازگشت"
   },
   "spam_report": {
-    "confirm_title": "Report spam?",
-    "confirm_message": "{count, plural, one {The message goes to {address} as a spam report and is then deleted.} other {Each of the # messages goes to {address} as its own spam report and is then deleted.}}",
-    "dont_ask": "Don't ask again",
-    "confirm": "Report and delete",
-    "cancel": "Cancel",
-    "sending": "Reporting…",
-    "done": "{count, plural, one {Reported to {address} and deleted.} other {# messages reported to {address} and deleted.}}",
-    "not_deleted": "{count, plural, one {Reported to {address}, but the message couldn't be deleted.} other {Reported to {address}, but # messages couldn't be deleted.}}",
-    "failed": "{count, plural, one {The message couldn't be reported, so it wasn't deleted.} other {# messages couldn't be reported, so they weren't deleted.}}",
-    "no_subject": "(no subject)"
+    "confirm_title": "گزارش هرزنامه؟",
+    "confirm_message": "{count, plural, one {پیام به‌عنوان گزارش هرزنامه به {address} ارسال و سپس حذف می‌شود.} other {هر یک از # پیام به‌صورت گزارش هرزنامهٔ جداگانه به {address} ارسال و سپس حذف می‌شود.}}",
+    "dont_ask": "دیگر نپرس",
+    "confirm": "گزارش و حذف",
+    "cancel": "انصراف",
+    "sending": "در حال گزارش…",
+    "done": "{count, plural, one {به {address} گزارش و حذف شد.} other {# پیام به {address} گزارش و حذف شد.}}",
+    "not_deleted": "{count, plural, one {به {address} گزارش شد، اما پیام حذف نشد.} other {به {address} گزارش شد، اما # پیام حذف نشد.}}",
+    "failed": "{count, plural, one {پیام گزارش نشد، بنابراین حذف نشد.} other {# پیام گزارش نشد، بنابراین حذف نشد.}}",
+    "no_subject": "(بدون موضوع)"
   },
   "phishing_report": {
     "action": "گزارش فیشینگ…",
@@ -2072,8 +2072,8 @@
         "description": "پیش از انتقال چند پیام انتخاب‌شده به زباله‌دان بپرس. حذف دائمی همیشه می‌پرسد."
       },
       "confirm_spam_report": {
-        "label": "Ask before reporting spam",
-        "description": "Mark as spam sends the message to {address} and deletes it. Turn this on to be asked first each time."
+        "label": "پرسیدن پیش از گزارش هرزنامه",
+        "description": "«گزارش هرزنامه» پیام را به {address} می‌فرستد و آن را حذف می‌کند. برای اینکه هر بار ابتدا پرسیده شود، این را روشن کنید."
       },
       "mail_layout": {
         "label": "چیدمان ایمیل",
