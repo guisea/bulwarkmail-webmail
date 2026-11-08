@@ -577,6 +577,9 @@
       "unverified_sent_from": "Denne meldinga hevdar å vere frå {domain}, men ho vart send frå {host} og har inga gyldig signatur frå {domain}.",
       "failed": "Denne meldinga hevdar å vere frå {domain}, men ho feila avsendarkontrollane til domenet. Ho kan vere forfalska.",
       "failed_sent_from": "Denne meldinga hevdar å vere frå {domain}, men ho vart send frå {host} og feila avsendarkontrollane til {domain}. Ho kan vere forfalska.",
+      "forwarded_label": "Via mail filter",
+      "forwarded": "This message came through your organisation's mail filter, so the sending server couldn't be checked, and it has no signature from {domain}.",
+      "forwarded_sent_from": "This message came through your organisation's mail filter. It was sent from {host} and has no signature from {domain}.",
       "caution": "Vær varsam med lenkjer, vedlegg og førespurnader om passord eller betalingsopplysingar."
     },
     "brand_logo": {
@@ -974,6 +977,18 @@
     "field_bcc": "Blindkopi",
     "send_anyway": "Send likevel",
     "back": "Tilbake"
+  },
+  "spam_report": {
+    "confirm_title": "Report spam?",
+    "confirm_message": "{count, plural, one {The message goes to {address} as a spam report and is then deleted.} other {Each of the # messages goes to {address} as its own spam report and is then deleted.}}",
+    "dont_ask": "Don't ask again",
+    "confirm": "Report and delete",
+    "cancel": "Cancel",
+    "sending": "Reporting…",
+    "done": "{count, plural, one {Reported to {address} and deleted.} other {# messages reported to {address} and deleted.}}",
+    "not_deleted": "{count, plural, one {Reported to {address}, but the message couldn't be deleted.} other {Reported to {address}, but # messages couldn't be deleted.}}",
+    "failed": "{count, plural, one {The message couldn't be reported, so it wasn't deleted.} other {# messages couldn't be reported, so they weren't deleted.}}",
+    "no_subject": "(no subject)"
   },
   "phishing_report": {
     "action": "Rapporter phishing …",
