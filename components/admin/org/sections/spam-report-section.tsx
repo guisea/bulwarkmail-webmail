@@ -2,7 +2,8 @@
 
 import { useEffect, useId, useState } from 'react';
 import { Info } from '@/components/icons';
-import { SettingItem, SettingsSection } from '@/components/settings/settings-section';
+import { SettingItem, SettingsSection, ToggleSwitch } from '@/components/settings/settings-section';
+import { DEFAULT_SPAM_NOTE } from '@/lib/phishing-report';
 import { isPhishingReportAddress, type PhishingReportFormat } from '@/lib/admin/organisation-policy';
 import { cn } from '@/lib/utils';
 import { InheritNote } from '../org-page';
@@ -34,7 +35,12 @@ const inputClass =
 export function SpamReportSection({ draft }: { draft: OrgPolicyDraft }) {
   const address = draft.orgValue('spamReport', 'address');
   const format = draft.orgValue('spamReport', 'format');
+  const includeNote = draft.orgValue('spamReport', 'includeNote');
+  const note = draft.orgValue('spamReport', 'note');
   const id = useId();
+  // Stored when the field is left, so typing doesn't save on every key.
+  const [noteText, setNoteText] = useState(note.value);
+  useEffect(() => { setNoteText(note.value); }, [note.value]);
 
   // Typed freely, stored only once it is an address (or empty, which turns
   // the action off): the policy never holds half an address.
@@ -127,6 +133,36 @@ export function SpamReportSection({ draft }: { draft: OrgPolicyDraft }) {
           />
         </div>
       </SettingItem>
+
+      <SettingItem
+        label="Note above the attachment"
+        description="Off sends the subject and the attached message only, which is what spam filters read. Turn it on for a gateway whose reports a person reviews."
+      >
+        <div className="flex flex-col items-start gap-1 sm:items-end">
+          <ToggleSwitch checked={includeNote.value} onChange={(v) => draft.setOrgValue('spamReport', 'includeNote', v)} testId="org-spam-include-note" />
+          <InheritNote draft={draft} own={includeNote.own} everyone={includeNote.everyone ? 'on' : 'off'} onReset={() => draft.clearOrgValue('spamReport', 'includeNote')} />
+        </div>
+      </SettingItem>
+
+      {includeNote.value && (
+        <div className="space-y-2 py-3">
+          <label htmlFor={`${id}-note`} className="text-sm font-medium text-foreground">Note</label>
+          <p className="text-xs text-muted-foreground">
+            Plain text. {'{reporter}'} becomes the user&apos;s name and address. Empty uses the text shown. ARF reports keep their own text.
+          </p>
+          <textarea
+            id={`${id}-note`}
+            data-testid="org-spam-note"
+            rows={3}
+            value={noteText}
+            onChange={(e) => setNoteText(e.target.value)}
+            onBlur={(e) => { if (e.target.value !== note.value) draft.setOrgValue('spamReport', 'note', e.target.value); }}
+            placeholder={DEFAULT_SPAM_NOTE}
+            className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:outline-hidden"
+          />
+          <InheritNote draft={draft} own={note.own} everyone={note.everyone || 'default'} onReset={() => draft.clearOrgValue('spamReport', 'note')} />
+        </div>
+      )}
 
       <div className="mt-3 flex items-start gap-2 rounded-md border border-border bg-muted/30 px-3 py-2 text-xs text-muted-foreground">
         <Info className="mt-0.5 h-3.5 w-3.5 shrink-0" aria-hidden="true" />

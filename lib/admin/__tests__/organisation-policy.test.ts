@@ -69,10 +69,13 @@ describe('organisation.inboundGateway', () => {
 
 describe('organisation.spamReport', () => {
   it('is off by default and keeps only an address and a known format', () => {
-    expect(sanitizeOrganisationPolicy({}).spamReport).toEqual({ address: '', format: 'forward' });
+    const off = { includeNote: false, note: '' };
+    expect(sanitizeOrganisationPolicy({}).spamReport).toEqual({ address: '', format: 'forward', ...off });
     expect(sanitizeOrganisationPolicy({ spamReport: { address: ' Spam@MXGuardDog.com ', format: 'arf' } }).spamReport)
-      .toEqual({ address: 'spam@mxguarddog.com', format: 'arf' });
-    expect(sanitizeOrganisationPolicy({ spamReport: { address: 'not an address', format: 'fax' } }).spamReport)
-      .toEqual({ address: '', format: 'forward' });
+      .toEqual({ address: 'spam@mxguarddog.com', format: 'arf', ...off });
+    expect(sanitizeOrganisationPolicy({ spamReport: { address: 'not an address', format: 'fax', includeNote: 'yes' } }).spamReport)
+      .toEqual({ address: '', format: 'forward', ...off });
+    expect(sanitizeOrganisationPolicy({ spamReport: { includeNote: true, note: 'By {reporter}' } }).spamReport)
+      .toMatchObject({ includeNote: true, note: 'By {reporter}' });
   });
 });

@@ -34,7 +34,12 @@ export const PHISHING_KEYWORD = '$phishing';
 export interface PhishingReportSetup {
   address: string;
   format: PhishingReportFormat;
+  /** Spam reports: the note above the attachment, {reporter} not yet filled in; null for none. */
+  note?: string | null;
 }
+
+/** The spam report note when the admin turned it on without writing one. */
+export const DEFAULT_SPAM_NOTE = 'Reported as spam by {reporter} with Bulwark.\nThe reported message is attached unchanged.';
 
 /**
  * What a report says the message is: phishing ("Report phishing"), or spam
@@ -55,7 +60,17 @@ export function phishingReportSetup(policy: SettingsPolicy | null | undefined): 
 
 /** The spam report setup in a policy; null while "Mark as spam" only moves to Junk. */
 export function spamReportSetup(policy: SettingsPolicy | null | undefined): PhishingReportSetup | null {
-  return setupOf(policy?.organisation?.spamReport ?? DEFAULT_ORGANISATION_POLICY.spamReport);
+  const section = { ...DEFAULT_ORGANISATION_POLICY.spamReport, ...policy?.organisation?.spamReport };
+  const setup = setupOf(section);
+  if (!setup) return null;
+  return { ...setup, note: section.includeNote ? (section.note.trim() || DEFAULT_SPAM_NOTE) : null };
+}
+
+/** A spam report note with {reporter} filled in, in CRLF lines. */
+export function spamNoteText(note: string, reporter: { name?: string; email: string }): string {
+  const who = reporter.name?.trim() ? `${reporter.name.trim()} <${reporter.email}>` : reporter.email;
+  const filled = note.replace(/\{reporter\}/g, who).replace(/\r?\n/g, '\r\n').trimEnd();
+  return filled ? `${filled}\r\n` : '';
 }
 
 /** Folders whose messages are the user's own: nothing to report there. */
@@ -150,7 +165,9 @@ export async function sendPhishingReport(email: Email, ctx: ReportContext): Prom
   await client.sendEmail(
     [setup.address],
     reportSubject(email.subject, ctx.kind),
-    reportText(identity, ctx.kind),
+    // A spam filter reads the attachment alone: no note unless the admin
+    // turned one on (a gateway whose reports a person reviews).
+    ctx.kind === 'spam' ? (setup.note ? spamNoteText(setup.note, identity) : '') : reportText(identity, ctx.kind),
     undefined,
     undefined,
     identity.id,

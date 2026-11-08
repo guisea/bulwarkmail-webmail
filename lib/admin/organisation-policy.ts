@@ -146,6 +146,10 @@ export interface OrganisationPolicy {
      */
     address: string;
     format: PhishingReportFormat;
+    /** Put a short note above the attachment (forward format). Off: subject and attachment only. */
+    includeNote: boolean;
+    /** The note, with {reporter} for the user's name and address; '' is DEFAULT_SPAM_NOTE. */
+    note: string;
   };
   /** A scope that sets this section replaces it as a whole. */
   labels: {
@@ -220,7 +224,7 @@ export const DEFAULT_ORGANISATION_POLICY: OrganisationPolicy = {
   recovery: { days: 0 },
   inboundGateway: { domains: [], mode: 'soften' },
   phishingReport: { address: '', format: 'forward' },
-  spamReport: { address: '', format: 'forward' },
+  spamReport: { address: '', format: 'forward', includeNote: false, note: '' },
   labels: { list: [], defaultId: '', required: false, extraHeader: '' },
   announcement: { id: '', severity: 'info', text: {}, fallbackLocale: 'en', startsAt: '', endsAt: '', dismissible: true },
   vacationTemplates: { library: [] },
@@ -546,6 +550,8 @@ export function sanitizeOrganisationPartial(raw: unknown): DeepPartial<Organisat
   if (spam) assign('spamReport', {
     address: email(spam.address),
     format: oneOf(spam.format, PHISHING_REPORT_FORMATS),
+    includeNote: bool(spam.includeNote),
+    note: text(spam.note)?.slice(0, 2000),
   });
 
   const lab = section('labels');
