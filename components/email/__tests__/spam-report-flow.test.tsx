@@ -55,9 +55,12 @@ vi.mock('@/stores/email-store', () => ({
 const { SpamReportHost } = await import('../spam-report-host');
 const { requestSpamReport } = await import('@/lib/spam-report-flow');
 
-function setAddress(address: string) {
+function setAddress(address: string, note: { includeNote?: boolean; note?: string } = {}) {
   usePolicyStore.setState({
-    policy: { ...DEFAULT_POLICY, organisation: { ...DEFAULT_ORGANISATION_POLICY, spamReport: { address, format: 'forward' } } },
+    policy: {
+      ...DEFAULT_POLICY,
+      organisation: { ...DEFAULT_ORGANISATION_POLICY, spamReport: { address, format: 'forward', includeNote: false, note: '', ...note } },
+    },
   });
 }
 
@@ -103,6 +106,7 @@ describe('Mark as spam with a spam report address', () => {
     const calls = hoisted.client.sendEmail.mock.calls as unknown[][];
     expect(calls.map((c) => c[0])).toEqual([['spam@mxguarddog.com'], ['spam@mxguarddog.com']]);
     expect(calls.map((c) => c[1])).toEqual(['Spam: Cheap pills', 'Spam: You won']);
+    expect(calls.map((c) => c[2])).toEqual(['', '']);
     expect((calls[0][10] as Array<{ type: string; blobId: string }>)[0]).toMatchObject({ type: 'message/rfc822', blobId: 'blob-e1' });
     expect(hoisted.store.deleteEmail).toHaveBeenCalledTimes(2);
     expect(hoisted.store.deleteEmail).toHaveBeenCalledWith(hoisted.client, 'e1', false, 'e1');
@@ -120,6 +124,21 @@ describe('Mark as spam with a spam report address', () => {
     expect(screen.queryByTestId('spam-report-dialog')).toBeNull();
     await waitFor(() => expect(hoisted.store.deleteEmail).toHaveBeenCalledWith(hoisted.client, 'e2', false, 'e2'));
     expect(hoisted.client.sendEmail).toHaveBeenCalledTimes(1);
+  });
+
+  it('adds the note only when the admin turned it on, with the reporter filled in', async () => {
+    const bodies: string[] = [];
+    render(<SpamReportHost />);
+    for (const note of [{ includeNote: true }, { includeNote: true, note: 'Spam for {reporter}\nPlease review.' }]) {
+      setAddress('review@gateway.example', note);
+      act(() => { requestSpamReport([e1]); });
+      await act(async () => { fireEvent.click(screen.getByTestId('spam-report-confirm')); });
+      bodies.push((hoisted.client.sendEmail.mock.calls.at(-1) as unknown[])[2] as string);
+    }
+    expect(bodies).toEqual([
+      'Reported as spam by Me <me@example.org> with Bulwark.\r\nThe reported message is attached unchanged.\r\n',
+      'Spam for Me <me@example.org>\r\nPlease review.\r\n',
+    ]);
   });
 
   it('keeps a message whose report did not go out', async () => {
