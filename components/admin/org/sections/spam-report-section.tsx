@@ -27,9 +27,9 @@ const inputClass =
   'focus-visible:outline-hidden focus-visible:border-ring sm:w-72';
 
 /**
- * Organisation > Security > Spam reports: where "Mark as spam" sends a
+ * Organisation > Security > Spam reports: where "Report spam" sends a
  * message before deleting it, e.g. the inbound gateway's spam address
- * (policy.json `organisation.spamReport`). Empty leaves "Mark as spam" as a
+ * (policy.json `organisation.spamReport`). Empty leaves "Report spam" as a
  * move to Junk.
  */
 export function SpamReportSection({ draft }: { draft: OrgPolicyDraft }) {
@@ -60,11 +60,11 @@ export function SpamReportSection({ draft }: { draft: OrgPolicyDraft }) {
     <SettingsSection
       id="spam"
       title="Spam reports"
-      description="Turns “Mark as spam” into a report: Bulwark sends the message to the address below, one report per message, without a copy in Sent, and then deletes it as the user's Delete would, instead of moving it to Junk. Users confirm, and can choose not to be asked again."
+      description="Turns “Report spam” into a report: Bulwark sends the message to the address below, one report per message, without a copy in Sent, and then deletes it as the user's Delete would, instead of moving it to Junk. Users confirm, and can choose not to be asked again."
     >
       <SettingItem
         label="Send reports to"
-        description="The spam address of your filtering service, e.g. spam@mxguarddog.com. Empty leaves “Mark as spam” as a move to Junk."
+        description="The spam address of your filtering service, e.g. spam@mxguarddog.com. Empty leaves “Report spam” as a move to Junk."
       >
         <div className="flex flex-col items-start gap-1 sm:items-end">
           <input
