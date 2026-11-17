@@ -15,6 +15,7 @@ import type { Email, Mailbox } from '@/lib/jmap/types';
 import { subjectForAccount } from '@/lib/org/account-subjects';
 import { emailKeyFor } from '@/lib/thread-utils';
 import { debug } from '@/lib/debug';
+import { emailHooks } from '@/lib/plugin-hooks';
 import { useAuthStore } from '@/stores/auth-store';
 import { resolveEmailActionContext, useEmailStore } from '@/stores/email-store';
 import { usePolicyStore } from '@/stores/policy-store';
@@ -64,6 +65,8 @@ export interface SpamReportOutcome {
   notDeleted: Email[];
   /** Not reported, so left where they are. */
   failed: Email[];
+  /** A plugin's onBeforeEmailSpamToggle said no: nothing was sent or deleted. */
+  stopped: boolean;
 }
 
 async function loadArfBuilder(): Promise<(input: ArfInput) => Promise<Blob>> {
@@ -75,8 +78,16 @@ async function loadArfBuilder(): Promise<(input: ArfInput) => Promise<Blob>> {
 export async function reportEmailsAsSpam(emails: Email[]): Promise<SpamReportOutcome> {
   const active = useAuthStore.getState().client;
   if (!active) throw new Error('Not signed in');
-  const outcome: SpamReportOutcome = { addresses: [], deleted: [], notDeleted: [], failed: [] };
+  const outcome: SpamReportOutcome = { addresses: [], deleted: [], notDeleted: [], failed: [], stopped: false };
   let buildArf: ((input: ArfInput) => Promise<Blob>) | undefined;
+
+  // Still "Mark as spam" to plugins: they can stop it, as they can the move
+  // to Junk, and hear about the messages that were reported.
+  const ids = [...new Set(emails.map((email) => email.id))];
+  if (emailHooks.onBeforeEmailSpamToggle.size > 0
+    && !(await emailHooks.onBeforeEmailSpamToggle.intercept({ emailIds: ids, spam: true }))) {
+    return { ...outcome, stopped: true };
+  }
 
   for (const email of emails) {
     const setup = spamSetupForEmail(email);
@@ -104,6 +115,10 @@ export async function reportEmailsAsSpam(emails: Email[]): Promise<SpamReportOut
       debug.error('Deleting a reported message failed:', error);
       outcome.notDeleted.push(email);
     }
+  }
+  const reported = [...outcome.deleted, ...outcome.notDeleted];
+  if (reported.length > 0) {
+    void emailHooks.onEmailSpamToggle.emit({ emailIds: [...new Set(reported.map((email) => email.id))], spam: true });
   }
   return outcome;
 }

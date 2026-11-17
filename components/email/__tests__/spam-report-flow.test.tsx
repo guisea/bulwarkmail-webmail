@@ -141,6 +141,40 @@ describe('Mark as spam with a spam report address', () => {
     ]);
   });
 
+  it('tells the plugins about the reported messages as a spam toggle', async () => {
+    const { emailHooks } = await import('@/lib/plugin-hooks');
+    const before = vi.fn(async () => true);
+    const after = vi.fn();
+    const offBefore = emailHooks.onBeforeEmailSpamToggle.register('test-plugin', before);
+    const offAfter = emailHooks.onEmailSpamToggle.register('test-plugin', after);
+    try {
+      render(<SpamReportHost />);
+      act(() => { requestSpamReport([e1, e2]); });
+      await act(async () => { fireEvent.click(screen.getByTestId('spam-report-confirm')); });
+      expect(before).toHaveBeenCalledWith({ emailIds: ['e1', 'e2'], spam: true });
+      await waitFor(() => expect(after).toHaveBeenCalledWith({ emailIds: ['e1', 'e2'], spam: true }));
+    } finally {
+      offBefore.dispose();
+      offAfter.dispose();
+    }
+  });
+
+  it('sends and deletes nothing when a plugin stops the spam toggle', async () => {
+    const { emailHooks } = await import('@/lib/plugin-hooks');
+    const off = emailHooks.onBeforeEmailSpamToggle.register('test-plugin', async () => false);
+    try {
+      render(<SpamReportHost />);
+      act(() => { requestSpamReport([e1]); });
+      await act(async () => { fireEvent.click(screen.getByTestId('spam-report-confirm')); });
+      expect(hoisted.client.sendEmail).not.toHaveBeenCalled();
+      expect(hoisted.store.deleteEmail).not.toHaveBeenCalled();
+      expect(screen.queryByTestId('spam-report-dialog')).toBeNull();
+      expect(useToastStore.getState().toasts).toEqual([]);
+    } finally {
+      off.dispose();
+    }
+  });
+
   it('keeps a message whose report did not go out', async () => {
     hoisted.client.sendEmail.mockRejectedValueOnce(new Error('refused'));
     render(<SpamReportHost />);

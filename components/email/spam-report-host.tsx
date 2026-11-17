@@ -25,6 +25,8 @@ export function SpamReportHost() {
   const dialogRef = useFocusTrap({ isActive: asking, restoreFocus: true });
 
   const showOutcome = useCallback((outcome: SpamReportOutcome) => {
+    // A plugin stopped it, as it can stop the move to Junk: nothing to say.
+    if (outcome.stopped) return;
     const address = outcome.addresses.join(', ');
     if (outcome.deleted.length > 0) toast.success(t('done', { address, count: outcome.deleted.length }));
     if (outcome.notDeleted.length > 0) toast.warning(t('not_deleted', { address, count: outcome.notDeleted.length }));
